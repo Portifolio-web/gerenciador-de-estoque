@@ -120,5 +120,6 @@ class ProdutosMysql implements InterProdutos {
         $sql = $this->pdo->prepare("DELETE FROM produtos WHERE id = :id");
         $sql->bindValue(':id', $id);
         $sql->execute();
+        $_SESSION['alert'] = "Produtos Cadastrados com Sucesso!";
     }
 }

@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php 
+        session_start();
         require_once 'config.php';
         require_once 'models/produtos.php';
         require_once 'dao/ProdutosMysql.php';
@@ -21,6 +22,16 @@
     <div class="sectionHead">
         <h1>Listas de Itens dos Produtos</h1>
     </div>
+    
+    <div class="alert">
+        <?php 
+            if($_SESSION['msg']) {
+                echo "<p>".$_SESSION['msg']."</p>";
+                $_SESSION['msg']='';
+             }
+        ?>
+    </div> 
+
     <section class="section_show">
     <div class="btn_add-user">
         <p><a href="add_users.php">Cadastrar Produtos</a></p>
