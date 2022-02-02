@@ -116,6 +116,9 @@ class ProdutosMysql implements InterProdutos {
     }
 
     public function delete($id) {
-
+        //recendo os id de action delete fazemos a a chamada da query DELETE 
+        $sql = $this->pdo->prepare("DELETE FROM produtos WHERE id = :id");
+        $sql->bindValue(':id', $id);
+        $sql->execute();
     }
 }
