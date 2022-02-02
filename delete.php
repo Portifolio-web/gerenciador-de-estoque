@@ -1,15 +1,20 @@
-<?php
+<?
+session_start();
+
 require_once 'config.php';
-// aqui o id do produtos vem via get na url será filtrado e guardado em uma variável $id.
+require_once 'models/produtos.php';
+require_once 'dao/ProdutosMysql.php';
+
+$deletePro = new ProdutosMysql($pdo);
+
 $id = filter_input(INPUT_GET, 'id');
-
+// aqui o id do produtos vem via get na url será filtrado e guardado em uma variável $id.
 if($id) {
-    // essa query faz uma exclusão de um item dentro do banco na tabela produtos dos produtos com $id igual ao valor recebido via get.
-    $sql = $cx_db->prepare("DELETE FROM produtos WHERE id = :id");
+    //Pegando o id quando o cliente clicar em deletar, esse id é instanciado pelo método delte, e mada la pra função delete da classe ProdutosMysql.
+    $deletePro->delete($id);
 
-    $sql->bindValue(':id', $id);
-    $sql->execute();
 }
+$_SESSION['alert'] = 'Produto Deletado Com Sucesso';
 // volta para a página Home.
 header("Location: index.php");
 exit;
