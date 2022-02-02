@@ -20,9 +20,10 @@
         $id = filter_input(INPUT_GET, 'id');
 
         if($id) {
+            //Aqui é instanciado um valor do id se ele achar um id ele vai criar um objeto desse id caso contrário ele vai ser uma instância false.
             $infoPro = $updatePro->findById($id);
         }
-
+        //Se a informação do id for falso, ele reencaminhar para o index.ph do sistema, caso ele for verdadeiro ai ele mostra os fomulários ja preenchidos.
         if($infoPro === false ){
             header("Location: index.php");
         }
