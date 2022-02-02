@@ -102,6 +102,7 @@ class ProdutosMysql implements InterProdutos {
     }
 
     public function update(Produtos $p) {
+        //Recebido os dados do produtos com os objetos de cada métodos montados, aqui fazemos a nosso query de atualização no banco de dados.
         $sql = $this->pdo->prepare("UPDATE produtos SET cod_produto = :cod_produto, nome = :nome, preco = :preco, estoque = :estoque, minEstoque = :minEstoque WHERE id = :id");
         $sql->bindValue(':cod_produto', $p->getCod_Produto());
         $sql->bindValue(':nome', $p->getNome());
@@ -109,7 +110,7 @@ class ProdutosMysql implements InterProdutos {
         $sql->bindValue(':estoque', $p->getEstoque());
         $sql->bindValue(':minEstoque', $p->getMinEstoque());
         $sql->bindValue(':id', $p->getId());
-
+        //depois de montado cada objeto da query usando a classe Produtos para criar esse objetos executamos esses objeto, fazeno assim as modificações devidas dentro do BD.
         $sql->execute();
          return true;
     }

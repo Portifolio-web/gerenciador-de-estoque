@@ -31,6 +31,6 @@ if(isset($_POST['nome']) && !empty($_POST['nome'])) {
     exit;
 
 }else {
-    header("Location: add_users.php");
+    header("Location: add_users.php?id=.$id");
     exit;
 }
