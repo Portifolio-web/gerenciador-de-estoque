@@ -3,13 +3,14 @@ class Usuarios {
     private $id;
     private $nome;
     private $mail;
+    private $senha;
 
-    public function geId() {
+    public function getId() {
         return $this->id;
     }
 
     public function setId($i) {
-        $this->id = trin($i);
+        $this->id = $i;
     }
 
     public function getNome(){
@@ -17,7 +18,7 @@ class Usuarios {
     }
 
     public function setNome($n) {
-        $this->nome = ucwords(trin($n));
+        $this->nome = $n;
     }
 
     public function getEmail() {
@@ -25,7 +26,15 @@ class Usuarios {
     }
 
     public function setEmail($e) {
-        $this->email = strtolower(trin($e));
+        $this->email = $e;
+    }
+
+    public function getSenha(){
+        return $this->senha;
+    }
+
+    public function setSenha($snh) {
+        $this->senha = md5($snh);
     }
 
 }
