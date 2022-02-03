@@ -2,7 +2,7 @@
 require_once 'models/Usuarios.php';
 require_once 'models/UsuarioInterface.php';
 
-class UsuarioDaoMysql implements UsuarioDAO {
+class UsuarioMysql implements interUsuarios {
     private $pdo;
 
     public function __construct(PDO $driver) {

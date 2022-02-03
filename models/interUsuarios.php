@@ -1,5 +1,5 @@
 <?php
-interface UsuarioDAO {
+interface interUsuarios {
     public function create(Usuarios $u);//criar usuarios
     public function findAll();//mostrar os usuários do banco 
     public function findById($id);//mostra apenas um usuários

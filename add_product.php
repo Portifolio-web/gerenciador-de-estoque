@@ -2,7 +2,7 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,10 +14,10 @@ session_start();
     <h1>Cadastros de Produtos</h1>
     <div class="alert">
         <?php 
-            if(!isset($_SESSION['alert'])) {
+            if($_SESSION['alert'] != '') {
                 echo "<p>".$_SESSION['alert']."</p>";
                 $_SESSION['alert']='';
-             }else if(!isset($_SESSION['alert'])) {
+             }else if($_SESSION['alert'] != '') {
                 echo "<p>".$_SESSION['alert']."</p>";
                 $_SESSION['alert']='';
              }else {
@@ -26,7 +26,7 @@ session_start();
              }
         ?>
     </div> 
-    <section class="section_add_user">
+    <section class="section_add_product">
         <h3>Cadastre seu Produto Aqui.</h3>
 
         <form class="form_user" action="add_user_action.php" method="post">

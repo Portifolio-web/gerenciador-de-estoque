@@ -11,7 +11,7 @@
     <?php 
          require_once 'config.php';
          require_once 'models/produtos.php';
-         require_once 'dao/ProdutosMysql.php';
+         require_once 'dataAcessObject/ProdutosMysql.php';
  
          // instanciando o objeto usuarioDAO
          $updatePro = new ProdutosMysql($pdo);
@@ -30,7 +30,7 @@
     ?>
     <h1>Formulários de Atualização dos Dados</h1>
     
-    <section class="section_add_user">
+    <section class="section_add_product">
         <h3>Editar Produto</h3>
         
         <form class="form_user" action="update_action.php" method="post">

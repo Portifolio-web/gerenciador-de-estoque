@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>CRUD de tabelas</title>
+    <title>Sistema de Estoque</title>
 </head>
 <body>
     <?php 
         session_start();
         require_once 'config.php';
         require_once 'models/produtos.php';
-        require_once 'dao/ProdutosMysql.php';
+        require_once 'dataAcessObject/ProdutosMysql.php';
 
         // instanciando o objeto usuarioDAO
         $produtos = new ProdutosMysql($pdo);
@@ -25,7 +25,7 @@
     
     <div class="alert">
         <?php 
-            if($_SESSION['msg']) {
+            if($_SESSION['msg'] != '') {
                 echo "<p>".$_SESSION['msg']."</p>";
                 $_SESSION['msg']='';
              }
@@ -34,7 +34,7 @@
 
     <section class="section_show">
     <div class="btn_add-user">
-        <p><a href="add_users.php">Cadastrar Produtos</a></p>
+        <p><a href="add_product.php">Cadastrar Produtos</a></p>
     </div>
         <table class= "table_list">
             <tr>

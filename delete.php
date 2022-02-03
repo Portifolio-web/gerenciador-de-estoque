@@ -2,7 +2,7 @@
 session_start();
 
 require_once 'config.php';
-require_once 'dao/ProdutosMysql.php';
+require_once 'dataAcessObject/ProdutosMysql.php';
 
 $deletePro = new ProdutosMysql($pdo);
 

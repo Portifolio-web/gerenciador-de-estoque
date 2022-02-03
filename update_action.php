@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 require_once 'models/produtos.php';
-require_once 'dao/ProdutosMysql.php';
+require_once 'dataAcessObject/ProdutosMysql.php';
 
 // instanciando o objeto usuarioDAO
 $updatePro = new ProdutosMysql($pdo);
