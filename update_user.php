@@ -10,22 +10,22 @@
 <body>
     <?php 
          require_once 'config.php';
-         require_once 'models/produtos.php';
-         require_once 'dataAcessObject/ProdutosMysql.php';
+         require_once 'models/Usuarios.php';
+         require_once 'dataAcessObject/dbUsuario.php';
  
          // instanciando o objeto usuarioDAO
-         $updateUser = new ProdutosMysql($pdo);
+         $updateUser = new DbUsuario($pdo);
         
         $infoUser = false;//variável vai ter a informação do produto
         $id = filter_input(INPUT_GET, 'id');
 
         if($id) {
             //Aqui é instanciado um valor do id se ele achar um id ele vai criar um objeto desse id caso contrário ele vai ser uma instância false.
-            $infoUser = $updateUSer->findById($id);
+            $infoUser = $updateUser->findById($id);
         }
         //Se a informação do id for falso, ele reencaminhar para o index.ph do sistema, caso ele for verdadeiro ai ele mostra os fomulários ja preenchidos.
         if($infoUser === false ){
-            // header("Location: index.php");
+            header("Location: index.php");
         }
     ?>
     <h1>Formulários de Atualização dos usuários</h1>
@@ -39,7 +39,7 @@
 
             <div class="inputBox">
                 <label id="nome" class="labelIput">Editar Nome:</label>
-                <input type="number" name="nome" id="nome" class="iputUser" value="<?=$infoUser->getNome();?>">
+                <input type="text" name="nome" id="nome" class="iputUser" value="<?=$infoUser->getNome();?>">
             </div>
 
             <div class="inputBox">
@@ -53,7 +53,7 @@
                 <input type="text" name="senha" id="senha" class="iputUser" value="<?=$infoUser->getSenha();?>">
             </div>
             <br>
-            <input class="iputButton" type="submit" name="submit" id ="submit" placehold="Atualizar">
+            <input class="iputButton" type="submit" name="submit" id ="submit" placeholder="Atualizar">
             <div class="btn-index"><a href="index.php">Voltar Home</a></div>
     </section>    
 </body>

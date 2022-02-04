@@ -46,12 +46,12 @@ class DbUsuario implements interUsuarios {
     }
 
     public function findById($id){
-        $sql->$this->prepare("SELECT * FROM usuarios WHERE id = :id");
-        $sql->bindValue('id:', $id);
-        $sql->execute();
+        $sql_user = $this->pdo->prepare("SELECT * FROM usuarios WHERE id = :id");
+        $sql_user->bindValue(':id', $id);
+        $sql_user->execute();
         //vericação se encontra alguma valor da query consultadoa
-        if($sql->rowCount() > 0){
-            $dados = $sql->fetch();
+        if($sql_user->rowCount() > 0){
+            $dados = $sql_user->fetch();
 
             $u = new Usuarios();
             $u->setId($dados['id']);
@@ -86,8 +86,15 @@ class DbUsuario implements interUsuarios {
         }
     }
 
-    public function update(Usuarios $u){
-        
+    public function updateUser(Usuarios $u){
+        //recebido as informações do formularios alterados ai aplicamos essas alterações no banco de dado.
+        $sql_user = $this->pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email WHERE id = :id");
+
+        $sql_user->bindValue(':nome', $u->getNome());
+        $sql_user->bindValue(':email', $u->getEmail());
+        $sql_user->bindValue(':id', $u->getId());
+        $sql_user->execute();
+        return true;
     }
 
     public function delete($id){
