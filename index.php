@@ -25,7 +25,7 @@
     
     <div class="alert">
         <?php 
-            if($_SESSION['msg'] != '') {
+            if(isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
                 echo "<p>".$_SESSION['msg']."</p>";
                 $_SESSION['msg']='';
              }
