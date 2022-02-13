@@ -11,22 +11,27 @@ session_start();
     <title>Cadastro de Produtos</title>
 </head>
 <body>
-    <h1>Cadastros de Produtos</h1>
-    <div class="alert">
-        <?php 
-            if($_SESSION['alert'] != '') {
-                echo "<p>".$_SESSION['alert']."</p>";
-                $_SESSION['alert']='';
-             }else if($_SESSION['alert'] != '') {
-                echo "<p>".$_SESSION['alert']."</p>";
-                $_SESSION['alert']='';
-             }else {
-                echo "<p>".$_SESSION['alert']."</p>";
-                $_SESSION['alert']=''; 
-             }
-        ?>
-    </div> 
+    <?php 
+        require_once 'header.php';
+        require_once 'menu_lateral.php';
+    ?>
+    
     <section class="section_add_product">
+        <h1>Cadastros de Produtos</h1>
+        <div class="alert">
+            <?php 
+                if($_SESSION['alert'] != '') {
+                    echo "<p>".$_SESSION['alert']."</p>";
+                    $_SESSION['alert']='';
+                }else if($_SESSION['alert'] != '') {
+                    echo "<p>".$_SESSION['alert']."</p>";
+                    $_SESSION['alert']='';
+                }else {
+                    echo "<p>".$_SESSION['alert']."</p>";
+                    $_SESSION['alert']=''; 
+                }
+            ?>
+        </div> 
         <h3>Cadastre seu Produto Aqui.</h3>
 
         <form class="form_user" action="add_user_action.php" method="post">
@@ -56,8 +61,7 @@ session_start();
                 <input type="number" name="minEstoque" id="minEstoque" class="iputUser">
             </div>
             <br>
-            <input class="iputButton" type="submit" name="submit" id ="submit">
-            <div class="btn-index"><a href="index.php">Voltar Home</a></div>
+            <input class="iputButton" type="submit" name="submit" value= "Cadastrar "id ="submit">
     </section> 
       
 </body>
