@@ -27,6 +27,7 @@ body > h1 {
 .header-alin {
     background-color:#1F262E;
 }
+/*Header do sistemas */
 .sectionHead {
     margin: 0 auto;
     display: flex;
@@ -76,20 +77,26 @@ body > h1 {
 .menu-bottom p {
     padding: 5px;
 }
+/*Fim do estilo do Header*/
 
+/*Menu Lateral*/
 .menu-lateral {
     display: flex;
     flex:1;
     background-color:#2E3740;
+    max-width: 100%;
+    width: 1.41%;
 }
 
 .menu-lateral ul {
+    width: 192.717px;
+    flex:1;
     display: flex;
     flex-direction: column;
 }
 
 .menu-lateral li {
-    padding: 10px 50px;
+    padding: 10px 0px 10px 10px;
     border-bottom: solid 2px #141B23; 
 }
 
@@ -97,7 +104,8 @@ body > h1 {
     color: #5B626A;
 }
 
-.section_table {
+/*Seção de tabela*/
+.section-home, .section_table {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -192,9 +200,14 @@ body > h1 {
     }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 820px) {
     .table_list {
-        width: 600px;
+        width: 500px;
+    }
+
+    .box-btn {
+        /* background-color: #003F63; */
+        width: 500px;
     }
 
     .btn_add-user {
@@ -218,8 +231,13 @@ body > h1 {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 765px) {
     .table_list {
+        width: 420px;
+    }
+
+    .box-btn {
+        /* background-color: #003F63; */
         width: 420px;
     }
 
@@ -294,6 +312,7 @@ body > h1 {
     margin: 0 auto;
     /* background-color: #ccc; */
 }
+/*Fim da seção de tabela*/
 
 .section_add_product > h3 {
     width: 600px;
