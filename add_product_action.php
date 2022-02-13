@@ -31,11 +31,11 @@ if(isset($_POST['cod_produto']) && !empty($_POST['cod_produto'])) {
         $_SESSION['alert'] = "Produtos Cadastrados com Sucesso!";
 
         //quano a query anterio e executado corretamente, ele volta para a mesma página, com a mensagem Prodt. cadastrado com sucesso.
-        header("Location: add_users.php");
+        header("Location: add_product.php");
     } else {
         //se ele achar o produto com o mesmo código ele retorna a mensagem produto já cadastrado no sistema.
         $_SESSION['alert'] = "Produto já Cadastrado no Sistema!";
-        header("Location: add_users.php");
+        header("Location: add_product.php");
         exit;  
     }
 

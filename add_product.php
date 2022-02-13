@@ -17,7 +17,7 @@ session_start();
     ?>
     
     <section class="section_add_product">
-        <h1>Cadastros de Produtos</h1>
+    
         <div class="alert">
             <?php 
                 if($_SESSION['alert'] != '') {
@@ -34,7 +34,7 @@ session_start();
         </div> 
         <h3>Cadastre seu Produto Aqui.</h3>
 
-        <form class="form_user" action="add_user_action.php" method="post">
+        <form class="form_user" action="add_product_action.php" method="post">
             <div class="inputBox">
                 <label id="nome" class="labelIput">Códgo do Produto:</label>
                 <input type="number" name="cod_produto" id="cod_produto" class="iputUser" >

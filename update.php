@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Cadastro de Produtos</title>
+    <title>Atualização de Cadastro Produtos</title>
 </head>
 <body>
     <?php 
@@ -25,12 +25,16 @@
         }
         //Se a informação do id for falso, ele reencaminhar para o index.ph do sistema, caso ele for verdadeiro ai ele mostra os fomulários ja preenchidos.
         if($infoPro === false ){
-            header("Location: index.php");
+            header("Location: update.php?id="."$id");
         }
     ?>
-    <h1>Formulários de Atualização dos Dados</h1>
+    <?php 
+        require_once 'header.php';
+        require_once 'menu_lateral.php';
+    ?>
     
     <section class="section_add_product">
+        
         <h3>Editar Produto</h3>
         
         <form class="form_user" action="update_action.php" method="post">
@@ -68,8 +72,7 @@
                 <input type="text" name="id_fornecedor" id="id_fornecedor" class="iputUser" value="<?=$infoPro->getId_fornecedor();?>">
             </div>
             <br>
-            <input class="iputButton" type="submit" name="submit" id ="submit" placehoid="Atualizar">
-            <div class="btn-index"><a href="index.php">Voltar Home</a></div>
+            <input class="iputButton" type="submit" name="submit" id ="submit" value="Atualizar">
     </section>    
 </body>
 </html>
