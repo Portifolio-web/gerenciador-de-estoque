@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-3B6NwesSXE7YJlcLI9RpRqGf2p/EgVH8BgoKTaUrmKNDkHPStTQ3EyoYjCGXaOTS" crossorigin="anonymous">
     <title>Sistema de Estoque</title>
 </head>
 
@@ -36,11 +37,7 @@
                 }
                 ?>
             </div>
-            <div class="box-btn">
-                <div class="btn_add-user">
-                    <p><a href="add_product.php">Cadastrar Produtos</a></p>
-                </div>
-            </div>
+            
             <table class="table_list">
                 <tr>
                     <th>Códgo</th>
