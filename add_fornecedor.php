@@ -22,33 +22,41 @@ session_start();
                 }
             ?>
         </div> 
-        <h3>Cadastre seu Produto Aqui.</h3>
+        <h3>Cadastre Um Forcedor Aqui.</h3>
 
         <form class="form_user" action="add_product_action.php" method="post">
             <div class="inputBox">
-                <label id="nome" class="labelIput">Códgo do Produto:</label>
+                <label id="nome" class="labelIput">Códgo Forcedor:</label>
                 <input type="number" name="cod_produto" id="cod_produto" class="iputUser" >
             </div>
 
             <div class="inputBox">
-                <label id="nome" class="labelIput">Nome do Produto:</label>
+                <label id="nome" class="labelIput">Nome:</label>
                 <input type="text" name="nome" id="nome" class="iputUser">
             </div>
 
             <div class="inputBox">
-                <label id="preco" class="labelIput">Preço:</label>
+                <label id="preco" class="labelIput">CNPJ/CPF:</label>
                 <br/>
-                <input type="text" name="preco" id="preco" class="iputUser">
+                <input type="text" name="cnpj" id="cnpj" class="iputUser">
+            </div>
+            <h3>Endereço:</h3>    
+            <div class="inputBox">
+                <label id="cidade" class="labelIput">Cidade:</label>
+                <input type="text" name="cidade" id="cidade" class="iputUser">
             </div>
 
             <div class="inputBox">
-                <label id="estoque" class="labelIput">Estoque:</label>
-                <input type="number" name="estoque" id="estoque" class="iputUser">
+                <label id="estado" class="labelIput">Estado:</label>
+                <input type="text" name="estado" id="estado" class="iputUser">
             </div>
-
             <div class="inputBox">
-                <label id="minEstoque" class="labelIput">Estoque Mínimo:</label>
-                <input type="number" name="minEstoque" id="minEstoque" class="iputUser">
+                <label id="rua" class="labelIput">Rua:</label>
+                <input type="text" name="rua" id="rua" class="iputUser">
+            </div>
+            <div class="inputBox">
+                <label id="cep" class="labelIput">CEP:</label>
+                <input type="number" name="cep" id="cep" class="iputUser">
             </div>
             <br>
             <input class="iputButton" type="submit" name="submit" value= "Cadastrar "id ="submit">
