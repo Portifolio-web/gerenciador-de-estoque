@@ -12,8 +12,8 @@
                     </div>
                 </li>
                 <li class="item"><a href="estoque.php"><i class="fa-solid fa-layer-group"></i>Estoque</a></li>
-                <li class="item"><a href="#"><i class="fa-solid fa-bag-shopping"></i>Fornecedores</a></li>
-                <li class="item"><a href="#"><i class="fa-solid fa-user-plus"></i>Usuários</a></li>
+                <li class="item"><a href="fornecedores.php"><i class="fa-solid fa-bag-shopping"></i>Fornecedores</a></li>
+                <li class="item"><a href="usuarios.php"><i class="fa-solid fa-user-plus"></i>Usuários</a></li>
             </div>
         </section>
         <!-- FIM - Menu lateral da Home -->
