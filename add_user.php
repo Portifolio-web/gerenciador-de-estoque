@@ -39,6 +39,6 @@
             <div class="btn-index"><a href="index.php">Voltar Home</a></div>
     </section>
 
-</body>
-
-</html>
+<?php
+    include 'footer.php';
+?>

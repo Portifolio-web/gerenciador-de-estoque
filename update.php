@@ -65,5 +65,6 @@
             <br>
             <input class="iputButton" type="submit" name="submit" id ="submit" value="Atualizar">
     </section>    
-</body>
-</html>
+<?php
+    include 'footer.php';
+?>

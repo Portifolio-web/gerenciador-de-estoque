@@ -14,11 +14,8 @@
         require_once 'header.php';
         require_once 'menu_lateral.php';
     ?>
-        <!-- home princiapal do sistema -->
-        <section class="section-home">
-            <h1>Homem do site</h1>
-        </section>
-    </div>                
-</body>
-
-</html>
+    <!-- home princiapal do sistema -->
+    <section class="home">
+        <h1>Homem do site</h1>
+    </section>                
+<?php require_once 'footer.php'?>

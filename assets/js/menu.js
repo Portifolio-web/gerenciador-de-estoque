@@ -1,14 +1,25 @@
-$(document).ready(function(){
-	$('.menu li:has(ul)').click(function(e){
-		e.preventDefault();
+const body = document.querySelector("body"),
+	  sidebar = body.querySelector(".sidebar"),
+	  toggle = body.querySelector(".toggle"),
+	  searchBtn = body.querySelector(".search-box"),
+	  modeSwtich = body.querySelector(".toggle-switch"),
+	  modeText = body.querySelector(".mode-text");
 
-		if ($(this).hasClass('active')){
-			$(this).removeClass('active');
-			$(this).children('ul').slideUp();
-		}else {
-			$('.menu li ul').slideUp();
-			$('.menu li').removeClass('active');
-			$(this).addClass('active');
-			$(this).children('ul').slideDown();
+	  toggle.addEventListener("click", () =>{
+		  sidebar.classList.toggle("close");
+	  });
+
+	  searchBtn.addEventListener("click", () =>{
+		sidebar.classList.remove("close");
+		
+	});
+
+	  modeSwtich.addEventListener("click", () =>{
+		body.classList.toggle("dark");
+		
+		if(body.classList.contains("dark")){
+			modeText.innerText = "Light Mode"
+		} else {
+			modeText.innerText = "Dark Mode"
 		}
 	});

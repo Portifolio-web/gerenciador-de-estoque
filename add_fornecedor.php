@@ -62,5 +62,6 @@ session_start();
             <input class="iputButton" type="submit" name="submit" value= "Cadastrar "id ="submit">
     </section> 
       
-</body>
-</html>
+<?php
+    include 'footer.php';
+?>

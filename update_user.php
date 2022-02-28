@@ -47,6 +47,6 @@
             <input class="iputButton" type="submit" name="submit" id="submit" placeholder="Atualizar">
             <div class="btn-index"><a href="index.php">Voltar Home</a></div>
     </section>
-</body>
-
-</html>
+<?php
+    include 'footer.php';
+?>
