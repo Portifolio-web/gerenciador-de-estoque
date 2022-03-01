@@ -185,6 +185,14 @@ body.dark {
     border-radius: 6px;
 }
 
+.smenu a .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    font-size: 20px;
+}
+
 .sbmenu.close .smenu {
     opacity: 0;
 } 
@@ -388,7 +396,7 @@ body.dark .switch::before{
     height: 100vh;
     left: 295px;
     width: calc(100% - 295px);
-    background: red;
+    background: var(--body-color);
     transition: var(--tran-05);
 }
 
@@ -407,19 +415,34 @@ body.dark .switch::before{
     width: calc(100% - 100px);
 }
 
-.footer {
-    position: relative;
-    height: 60px;
-    left: 295px;
-    width: calc(100% - 295px);
-    transition: var(--tran-05);
-}
-
 .home h1 {
     font-size: 30px;
     font-weight: 500;
     color: var(--text-color);
     padding: 8px 40px;
+}
+
+/* Cabeçário do header */
+body .div-header {
+    position: relative;
+    height: 60px;
+    left: 100px;
+    width: calc(100% - 100px);
+    transition: var(--tran-05);
+    background-color: #575e66;
+}
+
+.sidebar.close ~ .div-header {
+    left: 290px;
+    width: calc(100% - 290px);
+}
+
+.footer {
+    position: relative;
+    height: 60px;
+    left: 290px;
+    width: calc(100% - 290px);
+    transition: var(--tran-05);
 }
 
 .footer h2 {
@@ -434,7 +457,7 @@ body.dark .switch::before{
     width: calc(100% - 100px);
 }
 
-.sidebar.close ~ .footer {
+.sidebar.close ~  .footer{
     left: 100px;
     width: calc(100% - 100px);
 }
@@ -468,6 +491,7 @@ body.dark .switch::before{
 
 /* css da tabela */
 .table_list {
+    margin-top: 20px;
     background-color: #A1A5A6;
     width: 850px;
     max-width: 100%;

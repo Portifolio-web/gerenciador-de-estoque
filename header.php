@@ -1,7 +1,6 @@
 <!-- seção de header do sistema -->
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,5 +10,10 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Área do Cliente</title>
 </head>
-
 <body>   
+<div class="div-header">
+    <ul>
+        <li>Usuário</li>
+        <li>Área do Cliente</li>
+    </ul>
+</div>

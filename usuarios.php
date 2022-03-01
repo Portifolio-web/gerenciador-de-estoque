@@ -15,7 +15,6 @@
         require_once 'header.php';
         require_once 'menu_lateral.php';
     ?>
-    
         <section class="section_table">
             <div class="alert">
                 <?php

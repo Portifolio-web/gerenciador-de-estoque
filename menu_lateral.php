@@ -52,7 +52,7 @@
                     </a>
                     <nav class="smenu ">
                         
-                        <a class="nav-links" href="add_usuario.php">
+                        <a class="nav nav-links" href="add_usuario.php">
                             <i class='bx bxs-user-plus icon'></i>
                             <span class="text nav-sub"> Usuários</span>
                         </a>
@@ -69,7 +69,6 @@
                     </nav>
                 </li>
             </ul>
-            
         </div>
         <div class="botton-content">
             <li class="nav-links">
@@ -87,9 +86,7 @@
                 <span class="mode-text text">Dark Mode</span>
 
                 <div class="toggle-switch">
-                    <span class="switch">
-
-                    </span>
+                    <span class="switch"></span>
                 </div>
             </li>
         </div>
