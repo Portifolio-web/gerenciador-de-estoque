@@ -11,11 +11,15 @@ class DbUsuario implements interUsuarios {
 
     public function createUser(Usuarios $u) {
         
-        $sql = $this->pdo->prepare("INSERT INTO usuarios (nome, email, senha) VALUES (:nome, :email, :senha)");
+        $sql = $this->pdo->prepare("INSERT INTO usuarios (nome, email, senha, cidade, estado, rua, cep) VALUES (:nome, :email, :senha, :cidade, :estado, :rua, :cep )");
         
         $sql->bindValue(':nome', $u->getNome());
         $sql->bindValue(':email', $u->getEmail());
         $sql->bindValue(':senha', $u->getSenha());
+        $sql->bindValue(':cidade', $u->getCidade());
+        $sql->bindValue(':estado', $u->getEstado());
+        $sql->bindValue(':rua', $u->getRua());
+        $sql->bindValue(':cep', $u->getCep());
         $sql->execute();
 
         $u->setId($this->pdo->lastInsertId() );
@@ -35,8 +39,8 @@ class DbUsuario implements interUsuarios {
             foreach($lista as $itens) {
                 $u = new Usuarios();
                 $u->setId($itens['id']);
-                $u->seNome($itens['nome']);
-                $U->setEmail($itens['email']);
+                $u->setNome($itens['nome']);
+                $u->setEmail($itens['email']);
                 // esses objetos é armazenado dentro de um array
                 $array = $u;
             }

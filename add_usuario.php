@@ -24,7 +24,7 @@ session_start();
         </div> 
         <h3>Cadastre Um Usuário Aqui.</h3>
 
-        <form class="form_user" action="add_product_action.php" method="post">
+        <form class="form_user" action="add_user_action.php" method="post">
             
             <div class="inputBox">
                 <label id="nome" class="labelIput">Nome:</label>
@@ -39,7 +39,7 @@ session_start();
             <div class="inputBox">
                 <label id="senha" class="labelIput">Senha:</label>
                 <br/>
-                <input type="password" name="cnpj" id="cnpj" class="iputUser">
+                <input type="password" name="senha" id="senha" class="iputUser">
             </div>
             <h3>Endereço:</h3>    
             <div class="inputBox">

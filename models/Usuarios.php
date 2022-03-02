@@ -4,6 +4,10 @@ class Usuarios {
     private $nome;
     private $mail;
     private $senha;
+    private $cidade;
+    private $estado;
+    private $rua;
+    private $cep;
 
     public function getId() {
         return $this->id;
@@ -37,4 +41,35 @@ class Usuarios {
         $this->senha = md5($snh);
     }
 
+    public function getCidade() {
+        return $this->cidade;
+    }
+
+    public function setCidade($cd) {
+        $this->cidade = $cd;
+    }
+
+    public function getEstado() {
+        return $this->estado;
+    } 
+
+    public function setEstado($est) {
+        $this->estado = $est;
+    } 
+
+    public function getRua() {
+        return $this->rua;
+    }
+
+    public function setRua($r) {
+        $this->rua = $r;
+    }
+
+    public function getCep() {
+        return $this->cep;
+    }
+
+    public function setCep($c) {
+        $this->cep = $c;
+    }
 }
