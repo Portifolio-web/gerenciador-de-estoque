@@ -10,10 +10,10 @@ session_start();
     
         <div class="alert">
             <?php 
-                if($_SESSION['alert'] != '') {
+                if($_SESSION['alert'] != ' ') {
                     echo "<p>".$_SESSION['alert']."</p>";
                     $_SESSION['alert']='';
-                }else if($_SESSION['alert'] != '') {
+                }else if($_SESSION['alert'] != ' ') {
                     echo "<p>".$_SESSION['alert']."</p>";
                     $_SESSION['alert']='';
                 }else {
@@ -22,7 +22,7 @@ session_start();
                 }
             ?>
         </div> 
-        <h3>Cadastre Um Usuário Aqui.</h3>
+        <h3>Cadastro de Usuário.</h3>
 
         <form class="form_user" action="add_user_action.php" method="post">
             

@@ -2,12 +2,12 @@
     <?php
     session_start();
     require_once 'config.php';
-    require_once 'models/produtos.php';
-    require_once 'dataAcessObject/ProdutosMysql.php';
+    require_once 'models/Usuarios.php';
+    require_once 'dataAcessObject/dbUsuario.php';
 
     // instanciando o objeto usuarioDAO
-    $produtos = new ProdutosMysql($pdo);
-    $lista = $produtos->findAll();
+    $usuario = new DbUsuario($pdo);
+    $lista = $usuario->findAll();
     ?>
 
     <!-- seção de header do sistema -->
@@ -35,10 +35,10 @@
                 </tr>
                 <?php foreach ($lista as $iten) : ?>
                     <tr>
-                        <td><?= $iten->getCod_Produto(); ?></td>
+                        <td><?= $iten->getId(); ?></td>
                         <td><?= $iten->getNome(); ?></td>
-                        <td>R$ <?= $iten->getPreco(); ?></td>
-                        <td><a href="update.php?id=<?= $iten->getId(); ?>">Editar</a></td>
+                        <td><?= $iten->getEmail(); ?></td>
+                        <td><a href="update_user.php?id=<?= $iten->getId(); ?>">Editar</a></td>
                         <td><a href="delete.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
                     </tr>
                 <?php endforeach; ?>

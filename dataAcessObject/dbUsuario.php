@@ -1,5 +1,5 @@
 <?php
-require_once 'models/Usuarios.php';
+// require_once 'models/Usuarios.php';
 require_once 'models/interUsuarios.php';
 
 class DbUsuario implements interUsuarios {
@@ -41,8 +41,12 @@ class DbUsuario implements interUsuarios {
                 $u->setId($itens['id']);
                 $u->setNome($itens['nome']);
                 $u->setEmail($itens['email']);
+                $u->setCidade($itens['cidade']);
+                $u->setEstado($itens['estado']);
+                $u->setRua($itens['rua']);
+                $u->setCep($itens['cep']);
                 // esses objetos é armazenado dentro de um array
-                $array = $u;
+                $array[] = $u;
             }
         }
 
@@ -62,6 +66,10 @@ class DbUsuario implements interUsuarios {
             $u->setNome($dados['nome']);
             $u->setEmail($dados['email']);
             $u->setSenha($dados['senha']);
+            $u->setCidade($dados['cidade']);
+            $u->setEstado($dados['estado']);
+            $u->setRua($dados['rua']);
+            $u->setCep($dados['cep']);
 
             return $u;
         } else {

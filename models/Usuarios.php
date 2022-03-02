@@ -1,8 +1,9 @@
 <?php
+require_once 'models/interUsuarios.php';
 class Usuarios {
     private $id;
     private $nome;
-    private $mail;
+    private $email;
     private $senha;
     private $cidade;
     private $estado;
