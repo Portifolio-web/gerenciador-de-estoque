@@ -11,6 +11,10 @@ $id = filter_input(INPUT_POST, 'id');
 $nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email');
 $senha = filter_input(INPUT_POST, 'senha');
+$cidade = filter_input(INPUT_POST, 'cidade');
+$estado = filter_input(INPUT_POST, 'estado');
+$rua = filter_input(INPUT_POST, 'rua');
+$cep = filter_input(INPUT_POST, 'cep');
 
 //se for setado alguma valor vindo do formulário, ele entra dentro do if, caso contrário ele manda preenchar os formulários.
 if (isset($_POST['id']) && !empty($_POST['id'])) {
@@ -21,13 +25,18 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
     $NewUser->setNome($nome);
     $NewUser->setEmail($email);
     $NewUser->setSenha($senha);
+    $NewUser->setCidade($cidade);
+    $NewUser->setEstado($estado);
+    $NewUser->setRua($rua);
+    $NewUser->setRua($rua);
+    $NewUser->setCep($cep);
 
     $user->updateUser($NewUser);
 
     //$_SESSION['alert'] = "Usuários Atualizado com sucesso";
 
     //quano a query anterio e executado corretamente, ele volta para a mesma página, com a mensagem Prodt. cadastrado com sucesso.
-    header("Location: update_user.php?id=" . "$id");
+    header("Location: usuarios.php");
 } else {
     //$_SESSION['alert'] = "Preenchar todos os Campos!";
     header("Location: update_user.php?id=" . "$id");
