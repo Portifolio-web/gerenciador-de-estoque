@@ -39,7 +39,7 @@
                         <td><?= $iten->getNome(); ?></td>
                         <td><?= $iten->getEmail(); ?></td>
                         <td><a href="update_user.php?id=<?= $iten->getId(); ?>">Editar</a></td>
-                        <td><a href="delete.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
+                        <td><a href="delete_usuario.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>

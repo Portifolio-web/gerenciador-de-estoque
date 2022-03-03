@@ -91,6 +91,10 @@ class DbUsuario implements interUsuarios {
             $u->setNome($dados['nome']);
             $u->setEmail($dados['email']);
             $u->setSenha($dados['senha']);
+            $u->setCidade($dados['cidade']);
+            $u->setEstado($dados['estado']);
+            $u->setRua($dados['rua']);
+            $u->setCep($dados['cep']);
 
             return $u;
         } else {
@@ -115,6 +119,10 @@ class DbUsuario implements interUsuarios {
     }
 
     public function delete($id){
-        
+        //Aqui recebemos o ID do actionDelete, dessa forma é feita a chamada da query DELETE
+        $sql = $this->pdo->prepare("DELETE FROM usuarios WHERE id = :id");
+        // montando as query
+        $sql->bindValue(':id', $id);
+        $sql->execute();
     }
 }
