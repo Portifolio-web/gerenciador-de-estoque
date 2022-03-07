@@ -17,5 +17,5 @@ if($id) {
 $_SESSION['msg'] = "Produto Deletado Com Sucesso";
 
 // volta para a página Home.
-header("Location: index.php");
+header("Location: estoque.php");
 exit;

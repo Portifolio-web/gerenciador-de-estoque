@@ -2,12 +2,12 @@
     <?php
     session_start();
     require_once 'config.php';
-    require_once 'models/produtos.php';
-    require_once 'dataAcessObject/ProdutosMysql.php';
+    require_once 'models/Fornecedor.php';
+    require_once 'dataAcessObject/dbFornecedor.php';
 
     // instanciando o objeto usuarioDAO
-    $produtos = new ProdutosMysql($pdo);
-    $lista = $produtos->findAll();
+    $fornecedores = new dbFornecedor($pdo);
+    $lista = $fornecedores->findAll();
     ?>
 
     <!-- seção de header do sistema -->
@@ -28,17 +28,21 @@
             
             <table class="table_list">
                 <tr>
-                    <th>Códgo Forncedor</th>
+                    <th>Cód Forncedor</th>
                     <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
                     <th>CNP/CPF</th>
 
                     <th colspan="2">Ações</th>
                 </tr>
                 <?php foreach ($lista as $iten) : ?>
                     <tr>
-                        <td><?= $iten->getCod_Produto(); ?></td>
+                        <td><?= $iten->getCod_fornecedor(); ?></td>
                         <td><?= $iten->getNome(); ?></td>
-                        <td>R$ <?= $iten->getPreco(); ?></td>
+                        <td><?= $iten->getTelefone(); ?></td>
+                        <td><?= $iten->getEmail(); ?></td>
+                        <td><?= $iten->getCnpj(); ?></td>
                         <td><a href="update.php?id=<?= $iten->getId(); ?>">Editar</a></td>
                         <td><a href="delete.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
                     </tr>

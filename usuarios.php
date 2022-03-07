@@ -29,7 +29,7 @@
                 <tr>
                     <th>Códgo Usuario</th>
                     <th>Nome</th>
-                    <th>CNP/CPF</th>
+                    <th>E-mail</th>
 
                     <th colspan="2">Ações</th>
                 </tr>
