@@ -43,8 +43,8 @@
                         <td><?= $iten->getTelefone(); ?></td>
                         <td><?= $iten->getEmail(); ?></td>
                         <td><?= $iten->getCnpj(); ?></td>
-                        <td><a href="update.php?id=<?= $iten->getId(); ?>">Editar</a></td>
-                        <td><a href="delete.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
+                        <td><a href="up_fornecedor.php?id=<?= $iten->getId(); ?>">Editar</a></td>
+                        <td><a href="del_fornecedor.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
