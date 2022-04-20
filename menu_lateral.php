@@ -9,7 +9,7 @@
                 <span class="name">Sistemas Controle</span>
                 <span class="profession">De Estoque</span>      
             </div>
-            <i class='bx bx-chevron-right toggle'></i>
+            <i class='bx bx-chevron-right toggle gl'></i>
         </div>
     </header>
     <nav class="menu-bar">
@@ -45,12 +45,12 @@
                         <span class="text nav-text">Fornecedores</span> 
                     </a>
                 </li>
-                <li class=" nav-menu sbmenu">
+                <li class="nav-menu sbmenu">
                     <a href="#" class="bk-menu">
                         <i class='bx bxs-add-to-queue icon'></i>
                         <span class="text nav-text">Cadastro</span> 
                     </a>
-                    <nav class="smenu ">
+                    <nav class="smenu">
                         
                         <a class="nav nav-links" href="add_usuario.php">
                             <i class='bx bxs-user-plus icon'></i>

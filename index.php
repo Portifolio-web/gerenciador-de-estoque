@@ -16,6 +16,6 @@ $lista = $produtos->findAll();
 ?>
 <!-- home princiapal do sistema -->
 <section class="home">
-    <h1>Homem do site</h1>
+    <h1>Home do site</h1>
 </section>                
 <?php require_once 'footer.php'?>
