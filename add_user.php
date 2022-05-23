@@ -14,7 +14,7 @@
         }
         ?>
     </div>
-    <section class="section_add_product">
+    <section class="section_main">
         <h3>Cadastre um usuário aqui.</h3>
 
         <form class="form_user" action="add_user_action.php" method="post">

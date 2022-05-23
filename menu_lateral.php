@@ -21,48 +21,48 @@
                 </a>
             </li>
             <ul class="menu-link">
-                <li class="nav-links">
-                    <a href="." class="link">
+                <li class="nav-links" title="Dasboard">
+                    <a href="." class="link" >
                         <i class='bx bx-home icon'></i>
-                        <span class="text nav-text">Dasboard</span> 
+                        <span class="text nav-text" >Dasboard</span> 
                     </a>
                 </li>
-                <li class="nav-links">
+                <li class="nav-links" title="Estoque">
                     <a href="estoque.php" class="link">
                         <i class='bx bx-library icon'></i>
                         <span class="text nav-text">Estoque</span> 
                     </a>
                 </li>
-                <li class="nav-links">
+                <li class="nav-links" title="Usuários">
                     <a href="usuarios.php" class="link">
                         <i class='bx bxs-user-account icon'></i>
                         <span class="text nav-text">Usuarios</span> 
                     </a>
                 </li>
-                <li class="nav-links">
+                <li class="nav-links" title="Fornecedores">
                     <a href="fornecedores.php" class="link">
                         <i class='bx bxs-store-alt icon'></i>
                         <span class="text nav-text">Fornecedores</span> 
                     </a>
                 </li>
-                <li class="nav-menu sbmenu">
+                <li class="nav-menu sbmenu" >
                     <a href="#" class="bk-menu">
                         <i class='bx bxs-add-to-queue icon'></i>
                         <span class="text nav-text">Cadastro</span> 
                     </a>
                     <nav class="smenu">
                         
-                        <a class="nav nav-links" href="add_usuario.php">
+                        <a class="nav nav-links" href="add_usuario.php" title="Cadastro Usuários">
                             <i class='bx bxs-user-plus icon'></i>
                             <span class="text nav-sub"> Usuários</span>
                         </a>
                     
-                        <a class="nav-links" href="add_fornecedor.php">
+                        <a class="nav-links" href="add_fornecedor.php" title="Cadastro Fornecedores">
                             <i class='bx bxs-add-to-queue icon'></i>
                             <span class="text nav-sub">Fornecedores</span>
                         </a>
                     
-                        <a class="nav-links" href="add_produto.php">
+                        <a class="nav-links" href="add_produto.php" title="Cadastro Produtos">
                             <i class='bx bxs-shopping-bags icon'></i>
                             <span class="text nav-sub">Produtos</span>
                         </a>

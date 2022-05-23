@@ -6,7 +6,7 @@ session_start();
         require_once 'menu_lateral.php';
     ?>
     
-    <section class="section_add_product">
+    <section class="section_main">
     
         <div class="alert">
             <?php 
@@ -22,12 +22,12 @@ session_start();
                 }
             ?>
         </div> 
-        <h3>Cadastre Um Forcedor Aqui.</h3>
+        <h3>Cadastre Um Fornecedor Aqui.</h3>
 
-        <form class="form_user" action="add_product_action.php" method="post">
+        <form class="form_user" action="add_fornecedor_action.php" method="post">
             <div class="inputBox">
                 <label id="nome" class="labelIput">Códgo Forcedor:</label>
-                <input type="number" name="cod_produto" id="cod_produto" class="iputUser" >
+                <input type="number" name="cod_fornecedor" id="cod_fornecedor" class="iputUser" >
             </div>
 
             <div class="inputBox">
@@ -36,7 +36,17 @@ session_start();
             </div>
 
             <div class="inputBox">
-                <label id="preco" class="labelIput">CNPJ/CPF:</label>
+                <label id="email" class="labelIput">Email:</label>
+                <input type="email" name="email" id="email" class="iputUser">
+            </div>
+
+            <div class="inputBox">
+                <label id="telefone" class="labelIput">Telefone:</label>
+                <input type="text" name="telefone" id="telefone" class="iputUser">
+            </div>
+
+            <div class="inputBox">
+                <label id="cnpj" class="labelIput">CNPJ/CPF:</label>
                 <br/>
                 <input type="text" name="cnpj" id="cnpj" class="iputUser">
             </div>

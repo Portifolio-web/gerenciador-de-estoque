@@ -6,7 +6,7 @@ session_start();
         require_once 'menu_lateral.php';
     ?>
     
-    <section class="section_add_product">
+    <section class="section_main">
     
         <div class="alert">
             <?php 

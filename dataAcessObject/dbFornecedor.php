@@ -9,12 +9,13 @@ class dbFornecedor implements InterFornecedor {
         $this->pdo = $driver;
     }
 
-    public function createUser(Fornecedor $f) {
+    public function createFornecedor(Fornecedor $f) {
         
-        $sql = $this->pdo->prepare("INSERT INTO fornecedor (cod_fornecedor, nome, email, telefone, cidade, estado, rua, cep) VALUES (:cod_fornecedor, :nome, :email, :telefone, :cidade, :estado, :rua, :cep )");
+        $sql = $this->pdo->prepare("INSERT INTO fornecedor (cod_fornecedor, cnpj, nome, email, telefone, cidade, estado, rua, cep) 
+                                                    VALUES (:cod_fornecedor, :cnpj, :nome, :email, :telefone, :cidade, :estado, :rua, :cep )");
         
         $sql->bindValue(':cod_fornecedor', $f->getCod_fornecedor());
-        $sql->bindValue(':cnpl', $f->getCnpj());
+        $sql->bindValue(':cnpj', $f->getCnpj());
         $sql->bindValue(':nome', $f->getNome());
         $sql->bindValue(':email', $f->getEmail());
         $sql->bindValue(':telefone', $f->getTelefone());
@@ -68,6 +69,8 @@ class dbFornecedor implements InterFornecedor {
 
             $f = new Fornecedor();
             $f->setId($dados['id']);
+            $f->setCod_fornecedor($dados['cod_fornecedor']);
+            $f->SetCnpj($dados['cnpj']);
             $f->setNome($dados['nome']);
             $f->setEmail($dados['email']);
             $f->setTelefone($dados['telefone']);
@@ -78,6 +81,33 @@ class dbFornecedor implements InterFornecedor {
 
             return $f;
         } else {
+            return false;
+        }
+    }
+
+    public function findByCod_fornecedor($cod_fornecedor) {
+        //esse consulta faz retorna o valor do código do fornecedor, ou um valor vazio
+        $sql = $this->pdo->prepare("SELECT * FROM fornecedor WHERE cod_fornecedor = :cod_fornecedor");
+        $sql->bindValue(':cod_fornecedor', $cod_fornecedor);
+        $sql->execute();//executamos a query 
+        
+        //depois que consultamos na query na tabela, vamos fazer uma verificação se retorna alguma valor, se retornar ele vair motar o objeto dos valores.
+        if($sql->rowCount() > 0) {
+            $dados  = $sql->fetch();//dados recedo os valores retornado caso exita na consulta.
+
+            $f = new Fornecedor();
+            $f->setId($dados['id']);
+            $f->setCod_fornecedor($dados['cod_fornecedor']);
+            $f->setNome($dados['nome']);
+            $f->setEmail($dados['email']);
+            $f->setTelefone($dados['telefone']);
+            $f->setCidade($dados['cidade']);
+            $f->setEstado($dados['estado']);
+            $f->setRua($dados['rua']);
+            $f->setCep($dados['cep']);
+            //Objetos montado agora esses objetos é retornados
+            return $f;
+        }else {
             return false;
         }
     }
@@ -93,6 +123,7 @@ class dbFornecedor implements InterFornecedor {
 
             $f = new Fornecedor();
             $f->setId($dados['id']);
+            $f->setCod_fornecedor($dados['cod_fornecedor']);
             $f->setNome($dados['nome']);
             $f->setEmail($dados['email']);
             $f->setTelefone($dados['telefone']);
@@ -107,19 +138,21 @@ class dbFornecedor implements InterFornecedor {
         }
     }
 
-    public function updateUser(Fornecedor $f){
+    public function updateFornecedor(Fornecedor $f){
         //recebido as informações do formularios alterados ai aplicamos essas alterações no banco de dado.
-        $sql_user = $this->pdo->prepare("UPDATE fornecedor SET nome = :nome, email = :email, telefone = :telefone, cidade = :cidade, estado = :estado, rua = :rua, cep = :cep WHERE id = :id");
+        $sql_f = $this->pdo->prepare("UPDATE fornecedor SET cod_fornecedor = :cod_fornecedor, cnpj = :cnpj, nome = :nome, email = :email, telefone = :telefone, cidade = :cidade, estado = :estado, rua = :rua, cep = :cep WHERE id = :id");
 
-        $sql_user->bindValue(':nome', $f->getNome());
-        $sql_user->bindValue(':email', $f->getEmail());
-        $sql_user->bindValue(':telefone', $f->getTelefone());
-        $sql_user->bindValue(':cidade', $f->getCidade());
-        $sql_user->bindValue(':estado', $f->getEstado());
-        $sql_user->bindValue(':rua', $f->getRua());
-        $sql_user->bindValue(':cep', $f->getCep());
-        $sql_user->bindValue(':id', $f->getId());
-        $sql_user->execute();
+        $sql_f->bindValue(':cod_fornecedor', $f->getCod_fornecedor());
+        $sql_f->bindValue(':cnpj', $f->getCnpj());
+        $sql_f->bindValue(':nome', $f->getNome());
+        $sql_f->bindValue(':email', $f->getEmail());
+        $sql_f->bindValue(':telefone', $f->getTelefone());
+        $sql_f->bindValue(':cidade', $f->getCidade());
+        $sql_f->bindValue(':estado', $f->getEstado());
+        $sql_f->bindValue(':rua', $f->getRua());
+        $sql_f->bindValue(':cep', $f->getCep());
+        $sql_f->bindValue(':id', $f->getId());
+        $sql_f->execute();
         return true;
     }
 

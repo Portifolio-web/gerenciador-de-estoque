@@ -23,7 +23,7 @@
     <?php require_once 'menu_lateral.php'; ?>
     <h1>Formulários de Atualização dos usuários</h1>
 
-    <section class="section_add_product">
+    <section class="section_main">
         <h3>Editar Usuários</h3>
 
         <form class="form_user" action="update_action_user.php" method="post">

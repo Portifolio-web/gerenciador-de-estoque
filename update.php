@@ -24,7 +24,7 @@
         require_once 'menu_lateral.php';
     ?>
     
-    <section class="section_add_product">
+    <section class="section_main">
         
         <h3>Editar Produto</h3>
         

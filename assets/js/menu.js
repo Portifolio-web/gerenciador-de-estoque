@@ -1,3 +1,4 @@
+
 const body = document.querySelector("body"),
 	sidebar = body.querySelector(".sidebar"),
 	toggle = body.querySelector(".toggle"),
@@ -16,8 +17,9 @@ toggle.addEventListener("click", () => {
 searchBtn.addEventListener("click", () => {
 	sidebar.classList.remove("close");
 });
-//pegando o efieto do click no botao cadastro
+//pegando o efeito do click no botao cadastro
 sbmenu.addEventListener("click", () => {
+
 	//aplicando o efeito dentro da tag smenu
 	smenuOpen.classList.toggle("open");
 });
@@ -30,6 +32,5 @@ modeSwtich.addEventListener("click", () => {
 	} else {
 		modeText.innerText = "Dark Mode"
 	}
-
-
 });
+

@@ -23,29 +23,38 @@
     <?php require_once 'menu_lateral.php'; ?>
     <h1>Formulários de Atualização dos Fornecedores</h1>
 
-    <section class="section_add_product">
+    <section class="section_main">
         <h3>Editar Fornecedor</h3>
 
-        <form class="form_user" action="update_action_user.php" method="post">
+        <form class="form_user" action="update_action_fornecedor.php" method="post">
             <!-- campo oculto -->
             <input type="hidden" name="id" value="<?= $infFornecedor->getId(); ?>">
 
             <div class="inputBox">
-                <label id="nome" class="labelIput">Editar Nome:</label>
+                <label id="nome" class="labelIput">Códgo Forcedor:</label>
+                <input type="number" name="cod_fornecedor" id="cod_fornecedor" class="iputUser" value="<?= $infFornecedor->getCod_fornecedor(); ?>" >
+            </div>
+
+            <div class="inputBox">
+                <label id="nome" class="labelIput">Nome:</label>
                 <input type="text" name="nome" id="nome" class="iputUser" value="<?= $infFornecedor->getNome(); ?>">
             </div>
 
             <div class="inputBox">
-                <label id="nome" class="labelIput">Editar E-mail:</label>
+                <label id="email" class="labelIput">Email:</label>
                 <input type="email" name="email" id="email" class="iputUser" value="<?= $infFornecedor->getEmail(); ?>">
             </div>
 
             <div class="inputBox">
-                <label id="preco" class="labelIput">Editar Senha:</label>
-                <br />
-                <input type="telefone" name="senha" id="senha" class="iputUser" value="<?= $infFornecedor->getTelefone(); ?>">
+                <label id="telefone" class="labelIput">Telefone:</label>
+                <input type="text" name="telefone" id="telefone" class="iputUser" value="<?= $infFornecedor->getTelefone(); ?>">
             </div>
-            <br>
+
+            <div class="inputBox">
+                <label id="cnpj" class="labelIput">CNPJ/CPF:</label>
+                <br/>
+                <input type="text" name="cnpj" id="cnpj" class="iputUser" value="<?= $infFornecedor->getCnpj(); ?>">
+            </div>
             <h3>Endereço:</h3>    
             <div class="inputBox">
                 <label id="cidade" class="labelIput">Cidade:</label>
@@ -54,7 +63,7 @@
 
             <div class="inputBox">
                 <label id="estado" class="labelIput">Estado:</label>
-                <input type="text" name="estado" id="estado" class="iputUser" value="<?= $infFornecedor->getEstado();?>">
+                <input type="text" name="estado" id="estado" class="iputUser" value="<?= $infFornecedor->getEstado(); ?>">
             </div>
             <div class="inputBox">
                 <label id="rua" class="labelIput">Rua:</label>
@@ -65,7 +74,7 @@
                 <input type="number" name="cep" id="cep" class="iputUser" value="<?= $infFornecedor->getCep(); ?>">
             </div>
             <br>
-            <input class="iputButton" type="submit" name="submit" id="submit" value="Atualizar">
+            <input class="iputButton" type="submit" name="submit" value= "Cadastrar "id ="submit">
     </section>
 <?php
     include 'footer.php';
