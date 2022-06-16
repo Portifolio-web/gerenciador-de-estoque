@@ -6,4 +6,5 @@ interface interUsuarios {
     public function findByEmail($email);
     public function updateUser(Usuarios $u);//atualizar os dados do usuários
     public function delete($id);//deleta os itens do usários
+    public function login($email, $senha);
 }

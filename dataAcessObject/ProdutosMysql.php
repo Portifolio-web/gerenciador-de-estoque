@@ -17,9 +17,9 @@ class ProdutosMysql implements InterProdutos {
         $sql->bindValue(':estoque', $p->getEstoque());
         $sql->bindValue(':minEstoque', $p->getMinEstoque());
         $sql->execute();
-        //depois que é executado a quert $sql, temos os objetos de produtos de cada itens recebido do formulario montado como objeto.
+        //depois que é executado a query $sql, temos os objetos de produtos de cada itens recebido do formulario montado como objeto.
 
-        //depois que os dados e insrido no bd, é gerado o id desse produto cadastrado, é esse id que pegamos aqui e setamos dentro do objeto $p, usando o método do PDO lastInsertId.
+        //depois que os dados é insrido no bd, é gerado o id desse produto cadastrado, é esse id que pegamos aqui e setamos dentro do objeto $p, usando o método do PDO lastInsertId.
         $p->setId( $this->pdo->lastInsertId() );
         //com o objeto gerado e completo ele retorna esse objeto.
         return $p;
@@ -45,7 +45,6 @@ class ProdutosMysql implements InterProdutos {
                 $p->setPreco($itens['preco']);
                 $p->setEstoque($itens['estoque']);
                 $p->setMinEstoque($itens['minEstoque']);
-                $p->setId_fornecedor($itens['id_fornecedor']);
                 //jogando esse objetos dentro de array
                 $array[] = $p;
             }

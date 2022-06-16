@@ -72,7 +72,7 @@
         </div>
         <div class="botton-content">
             <li class="nav-links">
-                <a href="#" class="link">
+                <a href="logout.php" class="link">
                     <i class='bx bx-log-out icon'></i>
                     <span class="text nav-text">Sair</span> 
                 </a>

@@ -37,8 +37,8 @@ require_once 'menu_lateral.php';
                 <td><?= $iten->getId(); ?></td>
                 <td><?= $iten->getNome(); ?></td>
                 <td><?= $iten->getEmail(); ?></td>
-                <td><a href="update_user.php?id=<?= $iten->getId(); ?>">Editar</a></td>
-                <td><a href="delete_usuario.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
+                <td id="td4"><a href="update_user.php?id=<?= $iten->getId(); ?>">Editar</a></td>
+                <td id="td5"><a href="delete_usuario.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
             </tr>
         <?php endforeach; ?>
     </table>

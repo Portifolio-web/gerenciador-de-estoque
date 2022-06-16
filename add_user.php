@@ -1,4 +1,6 @@
-
+<?php
+if(!isset($_SESSION)) session_start();
+?>
     <h1>Página de Cadastro</h1>
     <div class="alert">
         <?php

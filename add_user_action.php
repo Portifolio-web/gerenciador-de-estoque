@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 require_once 'config.php';
 require_once 'models/Usuarios.php';
 require_once 'dataAcessObject/dbUsuario.php';
@@ -45,5 +47,6 @@ if(isset($_POST['email']) && !empty($_POST['email'])) {
 } else {
     $_SESSION['alert'] = "Preenchar todos os Campos!";
     header("Location: add_usuario.php");
+    return $_SESSION();
     exit;
 }
