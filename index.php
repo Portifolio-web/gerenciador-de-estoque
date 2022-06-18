@@ -29,4 +29,5 @@ require_once 'menu_lateral.php';
     require_once 'home.php';
     ?>
 </section>
+
 <?php require_once 'footer.php' ?>

@@ -37,19 +37,19 @@ if(isset($_POST['cod_fornecedor']) && !empty($_POST['cod_fornecedor'])) {
 
         $fornecedor->createFornecedor($newFornec);
 
-        $_SESSION['alert'] = "Fornecedor Cadastrados com Sucesso!";
+        $_SESSION['msg'] = "Fornecedor Cadastrados com Sucesso!";
 
         //quano a query anterio e executado corretamente, ele volta para a mesma página, com a mensagem Prodt. cadastrado com sucesso.
         header("Location: add_fornecedor.php");
     } else {
         //se ele achar o produto com o mesmo código ele retorna a mensagem produto já cadastrado no sistema.
-        $_SESSION['alert'] = "Fornecedor já Cadastrado no Sistema!";
+        $_SESSION['msg'] = "Fornecedor já Cadastrado no Sistema!";
         header("Location: add_fornecedor.php");
         exit;  
     }
 
 }else {
-    $_SESSION['alert'] = "Preenchar todos os Campos Fonecedor!";
+    $_SESSION['msg'] = "Preenchar todos os Campos Fonecedor!";
     header("Location: add_fornecedor.php");
     exit;
 }

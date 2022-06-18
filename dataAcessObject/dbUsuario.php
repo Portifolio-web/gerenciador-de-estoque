@@ -150,7 +150,7 @@ class DbUsuario implements interUsuarios
             // $u->setNome($user['nome']);
             // $u->setEmail($user['email']);
 
-            $_SESSION['idUser'] = $user['id'];
+            $_SESSION['idUser'] = $user['nome'];
             // echo $user['id']; 
 
             return true;

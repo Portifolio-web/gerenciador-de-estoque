@@ -85,7 +85,7 @@ body > h1 {
     --tran-02: all 0.2s ease;
     --tran-03: all 0.3s ease;
     --tran-04: all 0.4s ease;
-    --tran-05: all 0.5s ease;
+    --tran-05: all 0.6s ease;
     --tran-06: all 1.2s ease;
 }
 
@@ -95,6 +95,32 @@ body {
     transition: var(--tran-05);
 }
 
+.container {
+    width: 1360px;
+    max-width: 100%;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    left: 295px;
+    width: calc(100% - 295px);
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.home h1 {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 8px 40px;
+}
+
+.sidebar.close ~ .home {
+    left: 100px;
+    width: calc(100% - 100px);
+}
+
 body.dark {
     --body-color: #18191A;
     --sidebar-color: #242526;
@@ -102,6 +128,55 @@ body.dark {
     --primary-color-light: #3A3B3C;
     --taggle-color: #FFF;
     --text-color: #CCC;
+}
+
+/* Cabeçário do header */
+.div-nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 50px;
+    left: 80px;
+    width: calc(100% - 80px);
+    transition: var(--tran-05);
+    background-color: #1F262E;
+}
+
+.sidebar.close ~ .div-nav {
+    left: 100px;
+    width: calc(100% - 100px);
+}
+
+.div-nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.div-nav ul li {
+    color: #ccc;
+    padding: 10px 10px 0 10px;
+    
+}
+
+.div-nav ul li ~.icons-usertitle {
+    border-left: solid 1px #CCC;
+    padding-left: 8px;
+}
+.div-nav ul li ~.icons-user {
+    font-size: 1.2em;
+    padding:  9px 0px 0 0px;
+    color: #fff;
+} 
+
+.div-nav ul li ~ .avatar {
+    padding-left: 0px;
+}
+
+.div-nav ul li ~ .avatar img {
+    width: 20px;
+    padding: 0px 0 5px 0px;
 }
 
 /* ==== Sidebar ==== */
@@ -385,15 +460,6 @@ body.dark .switch::before{
     left: 24px;
 }
 
-.home {
-    position: relative;
-    height: 100vh;
-    left: 295px;
-    width: calc(100% - 295px);
-    background: var(--body-color);
-    transition: var(--tran-05);
-}
-
 .section-relatorios {
     display: flex;
     background-color: #F9F9F9;
@@ -620,7 +686,138 @@ body.dark .switch::before{
     font-size: 0.8rem;
     text-align: left;
     margin-right: 5px;
-    
+}
+
+/* Esterelização das tabelas */
+.section_table .main-table {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px #ccc;
+    background-color: #EFEFEF;
+    align-items: center;
+    margin-top: 20px;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.section_table .main-table .header {
+    display: flex;
+    width: 100%;
+    border-bottom: 2px  solid #ccc;
+    align-items: center;
+}
+
+.section_table .main-table .header ul {
+    display: flex;
+} 
+
+.section_table .main-table .header ul li {
+    display: flex;
+    padding: 10px;
+    color: #8C939D;
+}
+
+.section_table .main-table .header .icons1 {
+    border-right: 1px solid #ccc;
+    padding: 10px 7px;
+}
+
+.table_list {
+   border-collapse: collapse;
+   background-color:#F9F9F9;
+   width: 100%;
+}
+
+.section_table .main-table .table_list .table-header {
+    background-color: #EFEFEF;
+}
+
+.section_table .main-table .table_list .table-header th ~.bord_left {
+    border-left: 1px solid #ccc;
+}
+.section_table .main-table .table_list td ~.bord2_left {
+    border-left: 1px solid #ccc;
+}
+.section_table .main-table .table_list ~#btn-action {
+    border-bottom: 1px solid #ccc;
+}
+
+.table_list th {
+    padding: 5px 10px;
+    color: #8C939D;
+    text-align: left;
+    border-left: hidden;
+    border-left-width: 0;
+}
+
+.table_list td {
+    padding: 5px 5px 5px 15px;
+    color: #8C939D;
+    text-align: left;
+}
+
+/* pega o 6 item da tabela td e colocar um background e um padding de 5px */
+.table_list td:nth-child(6) {
+    background-color: #0e9aba;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.table_list #td4:nth-child(4) {
+    background-color: #0e9aba;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+/* pegao o 6 elementos da tabela <td> e coloca uma cor na tag <a> */
+.table_list td:nth-child(6) a {
+    color: #D9D9D9;
+}
+
+.table_list #td4:nth-child(4) a {
+    color: #D9D9D9;
+}
+/* pega o 6 elemento da tabela <td> e coloca um hover na tag <a> */
+.table_list #td4:nth-child(4) a:hover {
+    color: #F2B138;
+}
+
+.table_list #td5:nth-child(5) {
+    background-color: rgb(233, 52, 52);
+    padding: 5px;
+    color:#D9D9D9;
+    border-bottom: 1px solid #ccc;
+}
+
+.table_list #td5:nth-child(5) a {
+    color: #D9D9D9;
+}
+
+.table_list #td5:nth-child(5) a:hover {
+    color: rgb(60, 57, 57);
+}
+
+.table_list td:nth-child(6) a:hover {
+    color: #F2B138;
+}
+/* pega a 7 item da tabela <td> e colocar um background de cor red e colocar 5px de padding*/
+.table_list td:nth-child(7) {
+    background-color: rgb(233, 52, 52);
+    padding: 5px;
+    color:#D9D9D9;
+    border-bottom: 1px solid #ccc;
+}
+/* pegao o 7 elementos da tabela <td> e coloca uma cor na tag <a> */
+.table_list td:nth-child(7) a {
+    color: #D9D9D9;
+}
+/* pega o 6 elemento da tabela <td> e coloca um hover na tag <a> */
+.table_list td:nth-child(7) a:hover {
+    color: rgb(60, 57, 57);
+}
+
+/* even pega as colunas pares e add pega as colunas ímpares */
+.table_list tr:nth-child(even) {
+    background-color: #D9D9D9;
 }
 
 .section_table, .section-home {
@@ -631,24 +828,13 @@ body.dark .switch::before{
     position: relative;
     left: 295px;
     width: calc(100% - 295px);
-    background: var(--body-color);
+    /* background: var(--body-color); */
     transition: var(--tran-05);
 }
 
-/* .section_form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    /* width: 800px; */
-/* }
-
-.section_form h3 {
-    text-align: center;
-} */
-
 .sidebar.close ~ .section_table {
-    left: 100px;
-    width: calc(100% - 100px);
+    left: 110px;
+    width: calc(100% - 110px);
 }
 
 .sidebar.close ~.section_main {
@@ -659,28 +845,6 @@ body.dark .switch::before{
 .sidebar.close ~ .section-home {
     left: 100px;
     width: calc(100% - 100px);
-}
-
-.home h1 {
-    font-size: 30px;
-    font-weight: 500;
-    color: var(--text-color);
-    padding: 8px 40px;
-}
-
-/* Cabeçário do header */
-body .div-header {
-    position: relative;
-    height: 60px;
-    left: 100px;
-    width: calc(100% - 100px);
-    transition: var(--tran-05);
-    background-color: #575e66;
-}
-
-.sidebar.close ~ .div-header {
-    left: 290px;
-    width: calc(100% - 290px);
 }
 
 .footer {
@@ -700,12 +864,7 @@ body .div-header {
     padding: 20px 40px;
 }
 
-.sidebar.close ~ .home {
-    left: 100px;
-    width: calc(100% - 100px);
-}
-
-.sidebar.close ~  .footer{
+.sidebar.close ~.footer{
     left: 100px;
     width: calc(100% - 100px);
 }
@@ -735,14 +894,6 @@ body .div-header {
 
 .btn_add-user p a {
     color: #D9D9D9;
-}
-
-/* css da tabela */
-.table_list {
-    margin-top: 20px;
-    background-color: #A1A5A6;
-    width: 850px;
-    max-width: 100%;
 }
 
 @media (max-width: 1340px) {
@@ -851,83 +1002,6 @@ body .div-header {
         /* padding: 3px 3px 3px 10px; */
         font-size: 10px;
     }
-}
-
-.table_list {
-    border: solid 1px #353D40;
-}
-
-.table_list th {
-    background-color: #003F63;
-    padding: 15px;
-    color: #D9D9D9;
-    text-align: left;
-}
-
-.table_list td {
-    padding: 5px 5px 5px 15px;
-    color: #353D40;
-    text-align: left;
-}
-
-/* pega o 6 item da tabela td e colocar um background e um padding de 5px */
-.table_list td:nth-child(6) {
-    background-color: #0e9aba;
-    padding: 5px;
-}
-
-.table_list #td4:nth-child(4) {
-    background-color: #0e9aba;
-    padding: 5px;
-}
-/* pegao o 6 elementos da tabela <td> e coloca uma cor na tag <a> */
-.table_list td:nth-child(6) a {
-    color: #D9D9D9;
-}
-
-.table_list #td4:nth-child(4) a {
-    color: #D9D9D9;
-}
-/* pega o 6 elemento da tabela <td> e coloca um hover na tag <a> */
-.table_list #td4:nth-child(4) a:hover {
-    color: #F2B138;
-}
-
-.table_list #td5:nth-child(5) {
-    background-color: rgb(233, 52, 52);
-    padding: 5px;
-    color:#D9D9D9;
-}
-
-.table_list #td5:nth-child(5) a {
-    color: #D9D9D9;
-}
-
-.table_list #td5:nth-child(5) a:hover {
-    color: rgb(60, 57, 57);
-}
-
-.table_list td:nth-child(6) a:hover {
-    color: #F2B138;
-}
-/* pega a 7 item da tabela <td> e colocar um background de cor red e colocar 5px de padding*/
-.table_list td:nth-child(7) {
-    background-color: rgb(233, 52, 52);
-    padding: 5px;
-    color:#D9D9D9;
-}
-/* pegao o 7 elementos da tabela <td> e coloca uma cor na tag <a> */
-.table_list td:nth-child(7) a {
-    color: #D9D9D9;
-}
-/* pega o 6 elemento da tabela <td> e coloca um hover na tag <a> */
-.table_list td:nth-child(7) a:hover {
-    color: rgb(60, 57, 57);
-}
-
-/* even pega as colunas pares e add pega as colunas ímpares */
-.table_list tr:nth-child(even) {
-    background-color: #D9D9D9;
 }
 
 /* páginas de cadastros de produtos do sistemas */

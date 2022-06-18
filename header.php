@@ -1,6 +1,10 @@
 <!-- seção de header do sistema -->
+<!-- #<?php
+        #session_start();
+        ?> -->
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +14,14 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <title>Área do Cliente</title>
 </head>
-<body>   
-<div class="div-header">
-    <ul>
-        <li>Usuário</li>
-        <li>Área do Cliente</li>
-    </ul>
-</div>
+
+<body>
+    <div class="container">
+        <nav class="div-nav">
+            <ul>
+                <li class="title">Área do Cliente</li>
+                <li class="icons-usertitle">Bem Vindo(a) </li>
+                <li class="avatar"><img src="./assets/image/avatar.png" alt=""></li>
+                <li class="icons-user"> <?php echo $_SESSION['idUser'];  ?></li>
+            </ul>
+        </nav>

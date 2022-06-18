@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION)) session_start();
+if (!isset($_SESSION['msg'])) session_start();
 require_once 'header.php';
 require_once 'menu_lateral.php';
 ?>
@@ -8,17 +8,10 @@ require_once 'menu_lateral.php';
 
     <div class="alert">
         <?php
-        $_SESSION['alert'];
-        if ($_SESSION['alert'] != '') {
-            echo "<p>" . $_SESSION['alert'] . "</p>";
-            $_SESSION['alert'] = '';
-        } else if ($_SESSION['alert'] != '') {
-            echo "<p>" . $_SESSION['alert'] . "</p>";
-            $_SESSION['alert'] = '';
-        } else {
-            echo "<p>" . $_SESSION['alert'] . "</p>";
-            $_SESSION['alert'] = '';
-        }
+
+        echo "<p>" . $_SESSION['msg'] . "</p>";
+        $_SESSION['msg'] = '';
+
         ?>
     </div>
     <h3>Cadastre Um Fornecedor Aqui.</h3>
