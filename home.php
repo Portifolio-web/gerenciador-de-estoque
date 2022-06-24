@@ -1,7 +1,7 @@
 <section class="section-relatorios">
     <div class="header">
         <ul>
-            <li class="icons1">Icons</li>
+            <li class="icons1"><i class="fa-solid fa-chart-line"></i></li>
             <li class="icons2">Prazo</li>
             <li class="icons3">Prioridade</li>
         </ul>
@@ -47,7 +47,7 @@
     <section class="section-estatistica">
         <header class="header">
             <ul>
-                <li class="icons1">Icons</li>
+                <li class="icons1"><i class="fa-solid fa-chart-line"></i></li>
                 <li class="icons2">Estatística Financeira - Realizado</li>
             </ul>
         </header>
@@ -80,7 +80,7 @@
     <section class="section-estatistica">
         <header class="header">
             <ul>
-                <li class="icons1">Icons</li>
+                <li class="icons1"><i class="fa-solid fa-chart-line"></i></li>
                 <li class="icons2">Estatística Financeira - Pendente</li>
             </ul>
         </header>
@@ -112,7 +112,7 @@
     <section class="section-estatistica">
         <header class="header">
             <ul>
-                <li class="icons1">Icons</li>
+                <li class="icons1"><i class="fa-solid fa-chart-line"></i></li>
                 <li class="icons2">Total em caixa / Previsto</li>
             </ul>
         </header>

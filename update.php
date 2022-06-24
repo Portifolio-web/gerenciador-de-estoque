@@ -24,46 +24,58 @@ require_once 'header.php';
 require_once 'menu_lateral.php';
 ?>
 
-<section class="section_main">
+<section class="section_form">
+    <div class="alert">
+        <?php
+        echo "<p>" . $_SESSION['msg'] . "</p>";
+        $_SESSION['alert'] = '';
+        ?>
+    </div>
 
-    <h3>Editar Produto</h3>
+    <div class="main-add-user">
+        <header class="header">
+            <ul>
+                <li class="icons1"><i class='bx bxs-shopping-bags icon'></i></li>
+                <li class="icons2">Editar Produtos</li>
+            </ul>
+        </header>
 
-    <form class="form_user" action="update_action.php" method="post">
-        <!-- campo oculto -->
-        <input type="hidden" name="id" value="<?= $infoPro->getId(); ?>">
+        <form class="form_user" action="update_action.php" method="post">
+            <!-- campo oculto -->
+            <input type="hidden" name="id" value="<?= $infoPro->getId(); ?>">
+            <div class="form-primary">
+                <fieldset>
+                    <legend>Editar</legend>
+                    <div class="input-form">
+                        <label>Códgo do Produto:</label>
+                        <input type="number" name="cod_produto" id="cod_produto" value="<?= $infoPro->getCod_Produto(); ?>">
+                    </div>
+                    <div class="input-form">
+                        <label>Nome do Produto:</label>
+                        <input type="text" name="nome" id="nome" value="<?= $infoPro->getNome(); ?>">
+                    </div>
+                    <div class="input-form">
+                        <label>Preço:</label>
+                        <input type="text" name="preco" id="preco" value="<?= $infoPro->getPreco(); ?>">
+                    </div>
+                    <div class="input-form">
+                        <label>Estoque:</label>
+                        <input type="number" name="estoque" id="estoque" value="<?= $infoPro->getEstoque(); ?>">
+                    </div>
+                    <div class="input-form">
+                        <label>Estoque Min:</label>
+                        <input type="number" name="minEstoque" id="minEstoque" value="<?= $infoPro->getMinEstoque(); ?>">
+                    </div>
+                </fieldset>
 
-        <div class="inputBox">
-            <label id="nome" class="labelIput">Códgo do Produto:</label>
-            <input type="number" name="cod_produto" id="cod_produto" class="iputUser" value="<?= $infoPro->getCod_Produto(); ?>">
-        </div>
+                <!-- Botão de enviar os dados dos formulários -->
+                <div class="btn-send">
+                    <input type="submit" value="Atualizar">
+                </div>
+            </div>
 
-        <div class="inputBox">
-            <label id="nome" class="labelIput">Atualizar Nome do Produto:</label>
-            <input type="text" name="nome" id="nome" class="iputUser" value="<?= $infoPro->getNome(); ?>">
-        </div>
-
-        <div class="inputBox">
-            <label id="preco" class="labelIput">Atualizar Preço:</label>
-            <br />
-            <input type="text" name="preco" id="preco" class="iputUser" value="<?= $infoPro->getPreco(); ?>">
-        </div>
-
-        <div class="inputBox">
-            <label id="estoque" class="labelIput">Atualizar Estoque:</label>
-            <input type="text" name="estoque" id="estoque" class="iputUser" value="<?= $infoPro->getEstoque(); ?>">
-        </div>
-
-        <div class="inputBox">
-            <label id="minEstoque" class="labelIput">Atualizar Estoque Mínimo:</label>
-            <input type="text" name="minEstoque" id="minEstoque" class="iputUser" value="<?= $infoPro->getMinEstoque(); ?>">
-        </div>
-
-        <div class="inputBox">
-            <label id="id_fornecedor" class="labelIput">ID Fornecedor:</label>
-            <input type="text" name="id_fornecedor" id="id_fornecedor" class="iputUser" value="<?= $infoPro->getId_fornecedor(); ?>">
-        </div>
-        <br>
-        <input class="iputButton" type="submit" name="submit" id="submit" value="Atualizar">
+        </form>
+    </div>
 </section>
 <?php
 include 'footer.php';

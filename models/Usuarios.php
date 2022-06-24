@@ -5,10 +5,12 @@ class Usuarios {
     private $nome;
     private $email;
     private $senha;
+    private $cep;
+    private $rua;
+    private $numero;
+    private $bairro;
     private $cidade;
     private $estado;
-    private $rua;
-    private $cep;
 
     public function getId() {
         return $this->id;
@@ -42,6 +44,38 @@ class Usuarios {
         $this->senha = md5($snh);
     }
 
+    public function getCep() {
+        return $this->cep;
+    }
+
+    public function setCep($c) {
+        $this->cep = $c;
+    }
+
+    public function getRua() {
+        return $this->rua;
+    }
+
+    public function setRua($r) {
+        $this->rua = $r;
+    }
+
+    public function getNumero() {
+        return $this->numero;
+    }
+
+    public function setNumero($nu) {
+        $this->numero = $nu;
+    }
+
+    public function getBairro() {
+        return $this->bairro;
+    }
+
+    public function setBairro($br) {
+        $this->bairro = $br;
+    }
+
     public function getCidade() {
         return $this->cidade;
     }
@@ -58,19 +92,5 @@ class Usuarios {
         $this->estado = $est;
     } 
 
-    public function getRua() {
-        return $this->rua;
-    }
 
-    public function setRua($r) {
-        $this->rua = $r;
-    }
-
-    public function getCep() {
-        return $this->cep;
-    }
-
-    public function setCep($c) {
-        $this->cep = $c;
-    }
 }

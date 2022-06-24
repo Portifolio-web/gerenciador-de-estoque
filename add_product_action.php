@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'config.php';
-require_once 'models/produtos.php';
+require_once 'models/Produtos.php';
 require_once 'dataAcessObject/ProdutosMysql.php';
 
 // instanciando o objeto usuarioDAO
@@ -28,19 +28,19 @@ if(isset($_POST['cod_produto']) && !empty($_POST['cod_produto'])) {
 
         $produtos->create($neWpro);
 
-        $_SESSION['alert'] = "Produtos Cadastrados com Sucesso!";
+        $_SESSION['msg'] = "Produtos Cadastrados com Sucesso!";
 
         //quano a query anterio e executado corretamente, ele volta para a mesma página, com a mensagem Prodt. cadastrado com sucesso.
         header("Location: add_produto.php");
     } else {
         //se ele achar o produto com o mesmo código ele retorna a mensagem produto já cadastrado no sistema.
-        $_SESSION['alert'] = "Produto já Cadastrado no Sistema!";
+        $_SESSION['msg'] = "Produto já Cadastrado no Sistema!";
         header("Location: add_produto.php");
         exit;  
     }
 
 }else {
-    $_SESSION['alert'] = "Preenchar todos os Campos!";
+    $_SESSION['msg'] = "Preenchar todos os Campos!";
     header("Location: add_produto.php");
     exit;
 }

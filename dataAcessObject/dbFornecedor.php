@@ -11,18 +11,20 @@ class dbFornecedor implements InterFornecedor {
 
     public function createFornecedor(Fornecedor $f) {
         
-        $sql = $this->pdo->prepare("INSERT INTO fornecedor (cod_fornecedor, cnpj, nome, email, telefone, cidade, estado, rua, cep) 
-                                                    VALUES (:cod_fornecedor, :cnpj, :nome, :email, :telefone, :cidade, :estado, :rua, :cep )");
+        $sql = $this->pdo->prepare("INSERT INTO fornecedor (cod_fornecedor, razao_social, cnpj, email, telefone, cep, rua, numero, bairro, cidade, estado, ) 
+                                                    VALUES (:cod_fornecedor, :razao_social, :cnpj,  :email, :telefone, :cep, :rua,:numero, :bairro, :cidade, :estado,   )");
         
         $sql->bindValue(':cod_fornecedor', $f->getCod_fornecedor());
+        $sql->bindValue(':raza_social', $f->getRazaoSocial());
         $sql->bindValue(':cnpj', $f->getCnpj());
-        $sql->bindValue(':nome', $f->getNome());
         $sql->bindValue(':email', $f->getEmail());
         $sql->bindValue(':telefone', $f->getTelefone());
+        $sql->bindValue(':cep', $f->getCep());
+        $sql->bindValue(':rua', $f->getRua());
+        $sql->bindValue(':numero', $f->getNumero());
+        $sql->bindValue(':bairro', $f->getBairro());
         $sql->bindValue(':cidade', $f->getCidade());
         $sql->bindValue(':estado', $f->getEstado());
-        $sql->bindValue(':rua', $f->getRua());
-        $sql->bindValue(':cep', $f->getCep());
         $sql->execute();
 
         $f->setId($this->pdo->lastInsertId() );
@@ -43,14 +45,16 @@ class dbFornecedor implements InterFornecedor {
                 $f = new Fornecedor();
                 $f->setId($itens['id']);
                 $f->setCod_fornecedor($itens['cod_fornecedor']);
+                $f->setRazaoSocial($itens['razao_social']);
                 $f->SetCnpj($itens['cnpj']);
-                $f->setNome($itens['nome']);
                 $f->setEmail($itens['email']);
                 $f->setTelefone($itens['telefone']);
+                $f->setCep($itens['cep']);
+                $f->setRua($itens['rua']);
+                $f->setNumero($itens['numero']);
+                $f->setBairro($itens['bairro']);
                 $f->setCidade($itens['cidade']);
                 $f->setEstado($itens['estado']);
-                $f->setRua($itens['rua']);
-                $f->setCep($itens['cep']);
                 // esses objetos é armazenado dentro de um array
                 $array[] = $f;
             }
@@ -70,14 +74,16 @@ class dbFornecedor implements InterFornecedor {
             $f = new Fornecedor();
             $f->setId($dados['id']);
             $f->setCod_fornecedor($dados['cod_fornecedor']);
+            $f->setRazaoSocial($dados['razao_social']);
             $f->SetCnpj($dados['cnpj']);
-            $f->setNome($dados['nome']);
             $f->setEmail($dados['email']);
             $f->setTelefone($dados['telefone']);
+            $f->setCep($dados['cep']);
+            $f->setRua($dados['rua']);
+            $f->setNumero($dados['numero']);
+            $f->setBairro($dados['bairro']);
             $f->setCidade($dados['cidade']);
             $f->setEstado($dados['estado']);
-            $f->setRua($dados['rua']);
-            $f->setCep($dados['cep']);
 
             return $f;
         } else {
@@ -98,13 +104,16 @@ class dbFornecedor implements InterFornecedor {
             $f = new Fornecedor();
             $f->setId($dados['id']);
             $f->setCod_fornecedor($dados['cod_fornecedor']);
-            $f->setNome($dados['nome']);
+            $f->setRazaoSocial($dados['razao_social']);
+            $f->SetCnpj($dados['cnpj']);
             $f->setEmail($dados['email']);
             $f->setTelefone($dados['telefone']);
+            $f->setCep($dados['cep']);
+            $f->setRua($dados['rua']);
+            $f->setNumero($dados['numero']);
+            $f->setBairro($dados['bairro']);
             $f->setCidade($dados['cidade']);
             $f->setEstado($dados['estado']);
-            $f->setRua($dados['rua']);
-            $f->setCep($dados['cep']);
             //Objetos montado agora esses objetos é retornados
             return $f;
         }else {
@@ -124,13 +133,16 @@ class dbFornecedor implements InterFornecedor {
             $f = new Fornecedor();
             $f->setId($dados['id']);
             $f->setCod_fornecedor($dados['cod_fornecedor']);
-            $f->setNome($dados['nome']);
+            $f->setRazaoSocial($dados['razao_social']);
+            $f->SetCnpj($dados['cnpj']);
             $f->setEmail($dados['email']);
             $f->setTelefone($dados['telefone']);
+            $f->setCep($dados['cep']);
+            $f->setRua($dados['rua']);
+            $f->setNumero($dados['numero']);
+            $f->setBairro($dados['bairro']);
             $f->setCidade($dados['cidade']);
             $f->setEstado($dados['estado']);
-            $f->setRua($dados['rua']);
-            $f->setCep($dados['cep']);
 
             return $f;
         } else {
@@ -140,11 +152,11 @@ class dbFornecedor implements InterFornecedor {
 
     public function updateFornecedor(Fornecedor $f){
         //recebido as informações do formularios alterados ai aplicamos essas alterações no banco de dado.
-        $sql_f = $this->pdo->prepare("UPDATE fornecedor SET cod_fornecedor = :cod_fornecedor, cnpj = :cnpj, nome = :nome, email = :email, telefone = :telefone, cidade = :cidade, estado = :estado, rua = :rua, cep = :cep WHERE id = :id");
+        $sql_f = $this->pdo->prepare("UPDATE fornecedor SET cod_fornecedor = :cod_fornecedor, razao_social = :razao_social, cnpj = :cnpj, email = :email, telefone = :telefone, cep = :cep, rua = :rua, numero = :numero, bairro = :bairro, cidade = :cidade, estado = :estado WHERE id = :id");
 
         $sql_f->bindValue(':cod_fornecedor', $f->getCod_fornecedor());
         $sql_f->bindValue(':cnpj', $f->getCnpj());
-        $sql_f->bindValue(':nome', $f->getNome());
+        $sql_f->bindValue(':razao_social', $f->getRazaoSocial());
         $sql_f->bindValue(':email', $f->getEmail());
         $sql_f->bindValue(':telefone', $f->getTelefone());
         $sql_f->bindValue(':cidade', $f->getCidade());

@@ -1,4 +1,10 @@
-*{padding:0; margin: 0; list-style: none; text-decoration: none; font-family: 'Lato', sans-serif;}
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300;1,400&display=swap');
 
@@ -8,7 +14,7 @@ body {
     height: 100vh; */
 }
 
-body > h1 {
+body>h1 {
     padding: 30px;
     text-align: center;
     color: #353D40;
@@ -16,8 +22,9 @@ body > h1 {
 
 /* Página de visualizaão dos intes */
 .header-alin {
-    background-color:#1F262E;
+    background-color: #1F262E;
 }
+
 /*Header do sistemas */
 .sectionHead {
     margin: 0 auto;
@@ -29,7 +36,7 @@ body > h1 {
 }
 
 .logo {
-    flex:1;
+    flex: 1;
     display: flex;
     height: 80px;
     min-width: 192.717px;
@@ -39,7 +46,7 @@ body > h1 {
 }
 
 .menu-fornt {
-    flex:6;
+    flex: 6;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -50,8 +57,9 @@ body > h1 {
     display: flex;
     height: 40px;
     align-items: center;
-    
+
 }
+
 .menu-top li {
     color: #5B626A;
     padding: 40px 8px;
@@ -70,10 +78,11 @@ body > h1 {
 .menu-bottom p {
     padding: 5px;
 }
+
 /*Fim do estilo do Header*/
 
 :root {
-     /* ------ Color ------ */
+    /* ------ Color ------ */
     --body-color: ##EEEEEE;
     --sidebar-color: #2E3740;
     --primary-color: #27A9E3;
@@ -116,7 +125,7 @@ body {
     padding: 8px 40px;
 }
 
-.sidebar.close ~ .home {
+.sidebar.close~.home {
     left: 100px;
     width: calc(100% - 100px);
 }
@@ -142,7 +151,7 @@ body.dark {
     background-color: #1F262E;
 }
 
-.sidebar.close ~ .div-nav {
+.sidebar.close~.div-nav {
     left: 100px;
     width: calc(100% - 100px);
 }
@@ -157,24 +166,25 @@ body.dark {
 .div-nav ul li {
     color: #ccc;
     padding: 10px 10px 0 10px;
-    
+
 }
 
-.div-nav ul li ~.icons-usertitle {
+.div-nav ul li~.icons-usertitle {
     border-left: solid 1px #CCC;
     padding-left: 8px;
 }
-.div-nav ul li ~.icons-user {
-    font-size: 1.2em;
-    padding:  9px 0px 0 0px;
-    color: #fff;
-} 
 
-.div-nav ul li ~ .avatar {
+.div-nav ul li~.icons-user {
+    font-size: 1.2em;
+    padding: 9px 0px 0 0px;
+    color: #fff;
+}
+
+.div-nav ul li~.avatar {
     padding-left: 0px;
 }
 
-.div-nav ul li ~ .avatar img {
+.div-nav ul li~.avatar img {
     width: 20px;
     padding: 0px 0 5px 0px;
 }
@@ -205,7 +215,7 @@ body.dark {
 }
 
 .sidebar.close .text {
-   opacity: 0; 
+    opacity: 0;
 }
 
 .sidebar .image {
@@ -214,8 +224,9 @@ body.dark {
     align-items: center;
     justify-content: center;
 }
- 
-.sidebar .nav-links, .search-box {
+
+.sidebar .nav-links,
+.search-box {
     height: 42px;
     margin-top: 5px;
     list-style: none;
@@ -233,7 +244,7 @@ body.dark {
 
 .sidebar li .icon,
 .sidebar li .text {
-    color: var( --text-color);
+    color: var(--text-color);
     transition: var(--tran-02);
 }
 
@@ -275,7 +286,7 @@ body.dark {
 .smenu.open {
     opacity: 1;
     transition: var(--tran-06);
-} 
+}
 
 .smenu a:hover {
     border-radius: 6px;
@@ -290,13 +301,13 @@ body.dark {
     border-radius: 6px;
 }
 
-.sidebar header .image-text{
+.sidebar header .image-text {
     display: flex;
     align-items: center;
 
 }
 
-header .image-text .header-text{
+header .image-text .header-text {
     display: flex;
     flex-direction: column;
 }
@@ -341,7 +352,7 @@ body.dark .sidebar header .toggle {
 
 .sidebar .search-box {
     background: var(--primary-color-light);
-    border-radius: 6px; 
+    border-radius: 6px;
     transition: var(--tran-05);
 }
 
@@ -374,12 +385,12 @@ body.dark .sidebar header .toggle {
 
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text {
-    color: var( --sidebar-color); 
+    color: var(--sidebar-color);
 }
 
 body.dark .sidebar li a:hover .icon,
 body.dark .sidebar li a:hover .text {
-    color: var( --text-color); 
+    color: var(--text-color);
 }
 
 .sidebar .menu-bar {
@@ -443,7 +454,7 @@ body.dark .menu-bar .mode i.moon {
     background: var(--taggle-color);
 }
 
-.switch::before{
+.switch::before {
     content: "";
     position: absolute;
     height: 15px;
@@ -456,7 +467,7 @@ body.dark .menu-bar .mode i.moon {
     transition: var(--tran-03);
 }
 
-body.dark .switch::before{
+body.dark .switch::before {
     left: 24px;
 }
 
@@ -491,6 +502,7 @@ body.dark .switch::before{
     border-right: 2px solid #ccc;
     margin: 5px 0px;
 }
+
 .section-relatorios .header .icons3 {
     padding: 10px 7px;
 }
@@ -513,7 +525,12 @@ body.dark .switch::before{
     padding-left: 10px;
 }
 
-.section-box1, .section-box2, .section-box3, .section-box4, .section-box5, .section-box6 {
+.section-box1,
+.section-box2,
+.section-box3,
+.section-box4,
+.section-box5,
+.section-box6 {
     display: block;
     width: 140px;
     height: 60px;
@@ -521,7 +538,12 @@ body.dark .switch::before{
     padding: 10px;
 }
 
-.section-box1, .section-box2, .section-box3, .section-box4, .section-box5, .section-box6 li {
+.section-box1,
+.section-box2,
+.section-box3,
+.section-box4,
+.section-box5,
+.section-box6 li {
     text-align: center;
     color: #fff;
 }
@@ -535,15 +557,19 @@ body.dark .switch::before{
 .section-box1 {
     background-color: #DA542E;
 }
+
 .section-box2 {
     background-color: #FFB748;
 }
+
 .section-box3 {
     background-color: #28B779;
 }
+
 .section-box4 {
     background-color: #DA542E;
 }
+
 .section-box5 {
     background-color: #FFB748;
 }
@@ -603,10 +629,11 @@ body.dark .switch::before{
     margin: 30px auto;
     background-color: #FFFDF6;
     border: solid 1px #ccc;
-    
+
 }
 
-.section-container .section-estatistica .box-grafico .grafico-cicle, .grafico-cicle-cx {
+.section-container .section-estatistica .box-grafico .grafico-cicle,
+.grafico-cicle-cx {
     display: flex;
     width: 170px;
     max-width: 100%;
@@ -622,28 +649,33 @@ body.dark .switch::before{
     color: #ccc;
     padding-left: 20px;
 }
+
 .section-container .section-estatistica .box-grafico .grafico-cicle-cx {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
+
 .section-container .section-estatistica .box-grafico .grafico-cicle-cx .fat-left {
     width: 50%;
     height: auto;
     background-color: transparent;
 }
+
 .section-container .section-estatistica .box-grafico .grafico-cicle-cx .fat-left li {
     padding: 5px;
     font-size: 0.7rem;
     float: right;
 }
+
 .section-container .section-estatistica .box-grafico .grafico-cicle-cx .fat-height {
     width: 50%;
     height: auto;
     background-color: #FEB846;
 }
-.section-container .section-estatistica .box-grafico .grafico-cicle-cx .fat-height li{
+
+.section-container .section-estatistica .box-grafico .grafico-cicle-cx .fat-height li {
     padding: 2px 3px;
     font-size: 0.7rem;
     float: left;
@@ -670,6 +702,7 @@ body.dark .switch::before{
     background-color: #28B779;
     margin: 5px;
 }
+
 .section-container .section-estatistica .box-grafico .grafico-retang .botao-top .bot-desp {
     width: 10px;
     height: 10px;
@@ -682,14 +715,16 @@ body.dark .switch::before{
     align-items: center;
     justify-content: space-around;
 }
-.section-container .section-estatistica .box-grafico .grafico-retang .legend .leg-rec, .leg-desp {
+
+.section-container .section-estatistica .box-grafico .grafico-retang .legend .leg-rec,
+.leg-desp {
     font-size: 0.8rem;
     text-align: left;
     margin-right: 5px;
 }
 
 /* Esterelização das tabelas */
-.section_table .main-table {
+.section_form .main-table {
     display: flex;
     flex-direction: column;
     border: solid 1px #ccc;
@@ -700,45 +735,47 @@ body.dark .switch::before{
     width: 100%;
 }
 
-.section_table .main-table .header {
+.section_form .main-table .header {
     display: flex;
     width: 100%;
-    border-bottom: 2px  solid #ccc;
+    border-bottom: 2px solid #ccc;
     align-items: center;
 }
 
-.section_table .main-table .header ul {
+.section_form .main-table .header ul {
     display: flex;
-} 
+}
 
-.section_table .main-table .header ul li {
+.section_form .main-table .header ul li {
     display: flex;
     padding: 10px;
     color: #8C939D;
 }
 
-.section_table .main-table .header .icons1 {
+.section_form .main-table .header .icons1 {
     border-right: 1px solid #ccc;
     padding: 10px 7px;
 }
 
 .table_list {
-   border-collapse: collapse;
-   background-color:#F9F9F9;
-   width: 100%;
+    border-collapse: collapse;
+    background-color: #F9F9F9;
+    width: 100%;
 }
 
-.section_table .main-table .table_list .table-header {
+.section_form .main-table .table_list .table-header {
     background-color: #EFEFEF;
 }
 
-.section_table .main-table .table_list .table-header th ~.bord_left {
+.section_form .main-table .table_list .table-header th~.bord_left {
     border-left: 1px solid #ccc;
 }
-.section_table .main-table .table_list td ~.bord2_left {
+
+.section_form .main-table .table_list td~.bord2_left {
     border-left: 1px solid #ccc;
 }
-.section_table .main-table .table_list ~#btn-action {
+
+.section_form .main-table .table_list~#btn-action {
     border-bottom: 1px solid #ccc;
 }
 
@@ -768,6 +805,7 @@ body.dark .switch::before{
     padding: 5px;
     border-bottom: 1px solid #ccc;
 }
+
 /* pegao o 6 elementos da tabela <td> e coloca uma cor na tag <a> */
 .table_list td:nth-child(6) a {
     color: #D9D9D9;
@@ -776,6 +814,7 @@ body.dark .switch::before{
 .table_list #td4:nth-child(4) a {
     color: #D9D9D9;
 }
+
 /* pega o 6 elemento da tabela <td> e coloca um hover na tag <a> */
 .table_list #td4:nth-child(4) a:hover {
     color: #F2B138;
@@ -784,7 +823,7 @@ body.dark .switch::before{
 .table_list #td5:nth-child(5) {
     background-color: rgb(233, 52, 52);
     padding: 5px;
-    color:#D9D9D9;
+    color: #D9D9D9;
     border-bottom: 1px solid #ccc;
 }
 
@@ -799,17 +838,20 @@ body.dark .switch::before{
 .table_list td:nth-child(6) a:hover {
     color: #F2B138;
 }
+
 /* pega a 7 item da tabela <td> e colocar um background de cor red e colocar 5px de padding*/
 .table_list td:nth-child(7) {
     background-color: rgb(233, 52, 52);
     padding: 5px;
-    color:#D9D9D9;
+    color: #D9D9D9;
     border-bottom: 1px solid #ccc;
 }
+
 /* pegao o 7 elementos da tabela <td> e coloca uma cor na tag <a> */
 .table_list td:nth-child(7) a {
     color: #D9D9D9;
 }
+
 /* pega o 6 elemento da tabela <td> e coloca um hover na tag <a> */
 .table_list td:nth-child(7) a:hover {
     color: rgb(60, 57, 57);
@@ -820,7 +862,8 @@ body.dark .switch::before{
     background-color: #D9D9D9;
 }
 
-.section_table, .section-home {
+.section_form,
+.section-home {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -832,17 +875,17 @@ body.dark .switch::before{
     transition: var(--tran-05);
 }
 
-.sidebar.close ~ .section_table {
+.sidebar.close~.section_form {
     left: 110px;
     width: calc(100% - 110px);
 }
 
-.sidebar.close ~.section_main {
+.sidebar.close~.section_add_user {
     left: 800px;
     width: calc(100% - 649px);
 }
 
-.sidebar.close ~ .section-home {
+.sidebar.close~.section-home {
     left: 100px;
     width: calc(100% - 100px);
 }
@@ -864,7 +907,7 @@ body.dark .switch::before{
     padding: 20px 40px;
 }
 
-.sidebar.close ~.footer{
+.sidebar.close~.footer {
     left: 100px;
     width: calc(100% - 100px);
 }
@@ -899,7 +942,7 @@ body.dark .switch::before{
 @media (max-width: 1340px) {
     .table_list {
         width: 1050px;
-        
+
     }
 
     .box-btn {
@@ -976,7 +1019,7 @@ body.dark .switch::before{
         padding: 10px;
         font-size: 15px;
     }
-    
+
     .table_list td {
         /* padding: 3px 3px 3px 10px; */
         font-size: 12px;
@@ -997,46 +1040,130 @@ body.dark .switch::before{
         padding: 10px;
         font-size: 12px;
     }
-    
+
     .table_list td {
         /* padding: 3px 3px 3px 10px; */
         font-size: 10px;
     }
 }
 
-/* páginas de cadastros de produtos do sistemas */
-.section_main {
+/* páginas de cadastros de usuário do sistemas */
+.section_form .main-add-user {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    background-color: #F9F9F9;
+    margin-right: 20px;
+    width: 100%;
+}
+
+.section_form .main-add-user .header {
+    border-bottom: 2px solid #ccc;
+    background-color: #EFEFEF;
+    width: 100%;
+}
+
+.section_form .main-add-user .header ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.section_form .main-add-user .header ul li {
+    display: flex;
+    padding: 10px;
+    color: #8C939D;
+    font-weight: 600;
+}
+
+.section_form .main-add-user .header .icons1 {
+    border-right: 1px solid #ccc;
+    padding: 10px 7px;
+}
+
+.section_form .main-add-user .form-primary {
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
-    height: 100vh;
-    width: 700px;
-    margin: 0 auto;
+    justify-content: flex-start;    
+    margin: 15px;
+    max-width: 97.5%;
+    width: 100%;
+    background-color: #F5F5F5;
+    border: 1px solid #ccc;
+}
+.section_form .main-add-user .form-primary fieldset {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 15px 20px;
+    padding: 20px;
+    /* width: 1130px; */
+    max-width: 93%;
+    border: 1px solid #ccc;
+}
+.section_form .main-add-user .form-primary fieldset .input-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 33.3%;
+    width: 100%;
+}
+.section_form .main-add-user .form-primary fieldset legend {
+    padding: 3px 5px;
+    margin: 10px 0 0 10px;
+    color: #8C939D;
+    border: 1px solid #ccc;
+}
+.section_form .main-add-user .form-primary fieldset label {
+    padding: 10px 0 2px 10px;
+    color: #8C939D;
+}
+.section_form .main-add-user .form-primary fieldset input {
+    padding: 8px 8px;
+    margin: 0 10px 10px 10px;
+    color: #8C939D;
     max-width: 100%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    outline: none;
+}
+.section_form .main-add-user .form-primary .btn-add-endereco {
+    margin: 20px 20px 30px 20px;
+    width: 200px;
+    height: 20px;
+    
+}
+.section_form .main-add-user .form-primary .btn-add-endereco button {
+    background-color: #5CB65E;
+    border: 1px solid #ccc;
+    padding: 0px 10px 5px 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #FFF;
+}
+.section_form .main-add-user .form-primary .btn-add-endereco button > span {
+    font-size: 1.5rem;
+    padding: 0px 5px 3px 5px;
+}
+
+.section_form .main-add-user .form-primary .btn-send {
+    align-self: flex-end;
+}
+.section_form .main-add-user .form-primary .btn-send input {
+    margin: 20px 20px 30px 20px;
+    width: 200px;
+    height: 40px;
+}
+
+.section_form .main-add-user .form-primary .btn-send input {
+    background-color: #5CB65E;
+    border: 1px solid #ccc;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #FFF;
 }
 /*Fim da seção de tabela*/
 
-.section_main > h3 {
-    max-width: 100%;
-    text-align: center;
-    padding: 15px 10px;
-    background-color: #003F63;
-    color: #D9D9D9;
-    border-radius: 3px 3px 0 0;
-}
-
-.section_main > form {
-    max-width: 100%;
-    height: auto;
-    background-color: #D9D9D9;
-    padding: 15px 10px;
-    border-radius: 0 0 3px 3px;
-}
-
-.section_main > .form_user {
-    display: flex;
-    flex-direction: column;
-}
 
 .inputBox {
     position: relative;
@@ -1093,7 +1220,7 @@ body.dark .switch::before{
 
 .alert p {
     font-size: 20px;
-    color:rgb(255, 79, 79);
+    color: rgb(255, 79, 79);
     /* background-color: tomato; */
     font-weight: 600;
     text-align: center;
@@ -1101,7 +1228,9 @@ body.dark .switch::before{
 }
 
 /* Style da página login */
-a { text-decoration: none; }
+a {
+    text-decoration: none;
+}
 
 #body-login {
     background-color: #3a464a;
@@ -1136,7 +1265,7 @@ a { text-decoration: none; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: auto;     
+    height: auto;
 }
 
 .content-login-header h1 {
@@ -1161,7 +1290,7 @@ a { text-decoration: none; }
 }
 
 
-.content-login-header > div > img {
+.content-login-header>div>img {
     display: block;
     width: 200px;
     max-width: 100%;
@@ -1194,12 +1323,12 @@ a { text-decoration: none; }
         width: 250px;
     }
 
-    .content-login-header > div > img {
+    .content-login-header>div>img {
         width: 150px;
     }
 }
 
-.content-login-form > form input  {
+.content-login-form>form input {
     width: 100%;
     height: 40px;
     margin: 10px 0 18px 0;
@@ -1211,7 +1340,7 @@ a { text-decoration: none; }
 
 }
 
-.content-login-form form >.botao {
+.content-login-form form>.botao {
     background: #ff5100;
     height: 60px;
     font-size: 1.4em;

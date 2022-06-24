@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 require_once 'config.php';
 require_once 'models/Fornecedor.php';
 require_once 'dataAcessObject/dbFornecedor.php';
@@ -9,14 +9,16 @@ $fornecedor = new dbFornecedor($pdo);
 
 $id = filter_input(INPUT_POST, 'id');
 $cod_fornecedor = filter_input(INPUT_POST, 'cod_fornecedor');
+$razao_social = filter_input(INPUT_POST, 'razao_social');
 $cnpj = filter_input(INPUT_POST, 'cnpj');
-$nome = filter_input(INPUT_POST, 'nome');
 $email = filter_input(INPUT_POST, 'email');
 $telefone = filter_input(INPUT_POST, 'telefone');
+$cep = filter_input(INPUT_POST, 'cep');
+$rua = filter_input(INPUT_POST, 'rua');
+$numero = filter_input(INPUT_POST, 'numero');
+$bairro = filter_input(INPUT_POST, 'bairro');
 $cidade = filter_input(INPUT_POST, 'cidade');
 $estado = filter_input(INPUT_POST, 'estado');
-$rua = filter_input(INPUT_POST, 'rua');
-$cep = filter_input(INPUT_POST, 'cep');
 
 
 //se for setado alguma valor vindo do formulário, ele entra dentro do if, caso contrário ele manda preenchar os formulários.
@@ -27,23 +29,25 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
     
     $newFornec->setId($id);
     $newFornec->setCod_fornecedor($cod_fornecedor);
+    $newFornec->setRazaoSocial($razao_social);
     $newFornec->SetCnpj($cnpj);
-    $newFornec->setNome($nome);
     $newFornec->setEmail($email);
     $newFornec->setTelefone($telefone);
+    $newFornec->setCep($cep);
+    $newFornec->setRua($rua);
+    $newFornec->setRua($numero);
+    $newFornec->setRua($bairro);
     $newFornec->setCidade($cidade);
     $newFornec->setEstado($estado);
-    $newFornec->setRua($rua);
-    $newFornec->setCep($cep);
                  
     $fornecedor->updateFornecedor($newFornec);
 
-    //$_SESSION['alert'] = "Usuários Atualizado com sucesso";
+    $_SESSION['msg'] = "Usuários Atualizado com sucesso";
 
     //quano a query anterio e executado corretamente, ele volta para a mesma página, com a mensagem Prodt. cadastrado com sucesso.
     header("Location: fornecedores.php");
 } else {
-    //$_SESSION['alert'] = "Preenchar todos os Campos!";
+    $_SESSION['msg'] = "Preenchar todos os Campos!";
     header("Location: up_fornecedor.php?id=" . "$id");
     exit;
 }

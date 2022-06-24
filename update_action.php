@@ -27,7 +27,7 @@ if (isset($_POST['nome']) && !empty($_POST['nome'])) {
     //depois que montamos os objeto modificado que veio dos formulário, instaciamos esses objetos na variável $updatePro com o método upate, onde nesse método é feito a atualização dentro da tabela no meu BD. 
     $updatePro->update($updateItens);
 
-    header("Location: update.php?id=". "$id");
+    header("Location: estoque.php");
     exit;
 } else {
     header("Location: update?id=" . "$id");

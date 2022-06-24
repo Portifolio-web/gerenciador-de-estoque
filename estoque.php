@@ -13,7 +13,7 @@ $lista = $produtos->findAll();
 require_once 'header.php';
 require_once 'menu_lateral.php';
 ?>
-<section class="section_table">
+<section class="section_form">
     <div class="alert">
         <?php
         if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
@@ -25,7 +25,7 @@ require_once 'menu_lateral.php';
     <div class="main-table">
         <header class="header">
             <ul>
-                <li class="icons1">Icons</li>
+                <li class="icons1"><i class="fa-solid fa-people-carry-box"></i></li>
                 <li class="icons2">Estoque</li>
             </ul>
         </header>

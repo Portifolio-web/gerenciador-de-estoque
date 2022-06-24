@@ -15,7 +15,7 @@ require_once 'header.php';
 require_once 'menu_lateral.php';
 ?>
 
-<section class="section_table">
+<section class="section_form">
     <div class="alert">
         <?php
         if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
@@ -27,7 +27,7 @@ require_once 'menu_lateral.php';
     <div class="main-table">
         <header class="header">
             <ul>
-                <li class="icons1">Icons</li>
+                <li class="icons1"><i class="fa-solid fa-building-user"></i></li>
                 <li class="icons2">Fornecedores</li>
             </ul>
         </header>
@@ -43,7 +43,7 @@ require_once 'menu_lateral.php';
             <?php foreach ($lista as $iten) : ?>
                 <tr>
                     <td><?= $iten->getCod_fornecedor(); ?></td>
-                    <td class="bord2_left"><?= $iten->getNome(); ?></td>
+                    <td class="bord2_left"><?= $iten->getRazaoSocial(); ?></td>
                     <td class="bord2_left"><?= $iten->getTelefone(); ?></td>
                     <td class="bord2_left"><?= $iten->getEmail(); ?></td>
                     <td class="bord2_left"><?= $iten->getCnpj(); ?></td>

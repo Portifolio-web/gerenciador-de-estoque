@@ -15,7 +15,7 @@ class DbUsuario implements interUsuarios
     public function createUser(Usuarios $u)
     {
 
-        $sql = $this->pdo->prepare("INSERT INTO usuarios (nome, email, senha, cidade, estado, rua, cep) VALUES (:nome, :email, :senha, :cidade, :estado, :rua, :cep )");
+        $sql = $this->pdo->prepare("INSERT INTO usuarios (nome, email, senha, cidade, estado, rua, cep, numero, bairro) VALUES (:nome, :email, :senha, :cidade, :estado, :rua, :cep, :numero, :bairro)");
 
         $sql->bindValue(':nome', $u->getNome());
         $sql->bindValue(':email', $u->getEmail());
@@ -24,6 +24,8 @@ class DbUsuario implements interUsuarios
         $sql->bindValue(':estado', $u->getEstado());
         $sql->bindValue(':rua', $u->getRua());
         $sql->bindValue(':cep', $u->getCep());
+        $sql->bindValue(':numero', $u->getNumero());
+        $sql->bindValue(':bairro', $u->getBairro());
         $sql->execute();
 
         $u->setId($this->pdo->lastInsertId());
@@ -50,6 +52,8 @@ class DbUsuario implements interUsuarios
                 $u->setEstado($itens['estado']);
                 $u->setRua($itens['rua']);
                 $u->setCep($itens['cep']);
+                $u->setNumero($itens['numero']);
+                $u->setBairro($itens['bairro']);
                 // esses objetos é armazenado dentro de um array
                 $array[] = $u;
             }
@@ -76,6 +80,8 @@ class DbUsuario implements interUsuarios
             $u->setEstado($dados['estado']);
             $u->setRua($dados['rua']);
             $u->setCep($dados['cep']);
+            $u->setNumero($dados['numero']);
+            $u->setBairro($dados['bairro']);
 
             return $u;
         } else {
@@ -109,19 +115,19 @@ class DbUsuario implements interUsuarios
         }
     }
 
-    public function updateUser(Usuarios $u)
+    public function updateUser(Usuarios $up)
     {
         //recebido as informações do formularios alterados ai aplicamos essas alterações no banco de dado.
         $sql_user = $this->pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, senha = :senha, cidade = :cidade, estado = :estado, rua = :rua, cep = :cep WHERE id = :id");
 
-        $sql_user->bindValue(':nome', $u->getNome());
-        $sql_user->bindValue(':email', $u->getEmail());
-        $sql_user->bindValue(':senha', $u->getSenha());
-        $sql_user->bindValue(':cidade', $u->getCidade());
-        $sql_user->bindValue(':estado', $u->getEstado());
-        $sql_user->bindValue(':rua', $u->getRua());
-        $sql_user->bindValue(':cep', $u->getCep());
-        $sql_user->bindValue(':id', $u->getId());
+        $sql_user->bindValue(':nome', $up->getNome());
+        $sql_user->bindValue(':email', $up->getEmail());
+        $sql_user->bindValue(':senha', $up->getSenha());
+        $sql_user->bindValue(':rua', $up->getRua());
+        $sql_user->bindValue(':cep', $up->getCep());
+        $sql_user->bindValue(':id', $up->getId());
+        $sql_user->bindValue(':cidade', $up->getCidade());
+        $sql_user->bindValue(':estado', $up->getEstado());
         $sql_user->execute();
         return true;
     }
@@ -159,8 +165,9 @@ class DbUsuario implements interUsuarios
         }
     }
 
-    public function logout() {
-		unset($_SESSION['idUser']);
-		header("Location: login.php");
-	}
+    public function logout()
+    {
+        unset($_SESSION['idUser']);
+        header("Location: login.php");
+    }
 }

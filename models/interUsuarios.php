@@ -4,7 +4,7 @@ interface interUsuarios {
     public function findAll();//mostrar os usuários do banco 
     public function findById($id);//mostra apenas um usuários
     public function findByEmail($email);
-    public function updateUser(Usuarios $u);//atualizar os dados do usuários
+    public function updateUser(Usuarios $up);//atualizar os dados do usuários
     public function delete($id);//deleta os itens do usários
     public function login($email, $senha);
 }
