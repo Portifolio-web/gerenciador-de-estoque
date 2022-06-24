@@ -27,12 +27,12 @@ if (isset($_POST['email']) && !empty($_POST['email'])) {
         $newUser->setNome($nome);
         $newUser->setEmail($email);
         $newUser->setSenha($senha);
-        $newUser->setCidade($cidade);
-        $newUser->setEstado($estado);
-        $newUser->setRua($rua);
         $newUser->setCep($cep);
+        $newUser->setRua($rua);
         $newUser->setNumero($numero);
         $newUser->setBairro($bairro);
+        $newUser->setCidade($cidade);
+        $newUser->setEstado($estado);
 
 $usuario->createUser($newUser);
 

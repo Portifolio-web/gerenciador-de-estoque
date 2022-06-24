@@ -7,14 +7,16 @@ require_once 'dataAcessObject/dbUsuario.php';
 // instanciando o objeto usuarioDAO
 $user = new DbUsuario($pdo);
 
-$id = filter_input(INPUT_POST, 'id');
-$nome = filter_input(INPUT_POST, 'nome');
+$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
+$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_EMAIL);
 $email = filter_input(INPUT_POST, 'email');
 $senha = filter_input(INPUT_POST, 'senha');
+$cep = filter_input(INPUT_POST, 'cep');
+$rua = filter_input(INPUT_POST, 'rua');
+$numero = filter_input(INPUT_POST, 'numero');
+$bairro = filter_input(INPUT_POST, 'bairro');
 $cidade = filter_input(INPUT_POST, 'cidade');
 $estado = filter_input(INPUT_POST, 'estado');
-$rua = filter_input(INPUT_POST, 'rua');
-$cep = filter_input(INPUT_POST, 'cep');
 
 //se for setado alguma valor vindo do formulário, ele entra dentro do if, caso contrário ele manda preenchar os formulários.
 if (isset($_POST['id']) && !empty($_POST['id'])) {
@@ -25,11 +27,12 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
     $NewUser->setNome($nome);
     $NewUser->setEmail($email);
     $NewUser->setSenha($senha);
+    $NewUser->setCep($cep);
+    $NewUser->setRua($rua);
+    $NewUser->setNumero($numero);
+    $NewUser->setBairro($bairro);
     $NewUser->setCidade($cidade);
     $NewUser->setEstado($estado);
-    $NewUser->setRua($rua);
-    $NewUser->setRua($rua);
-    $NewUser->setCep($cep);
 
     $user->updateUser($NewUser);
 

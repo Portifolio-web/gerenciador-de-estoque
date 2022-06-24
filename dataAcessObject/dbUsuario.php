@@ -118,16 +118,18 @@ class DbUsuario implements interUsuarios
     public function updateUser(Usuarios $up)
     {
         //recebido as informações do formularios alterados ai aplicamos essas alterações no banco de dado.
-        $sql_user = $this->pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, senha = :senha, cidade = :cidade, estado = :estado, rua = :rua, cep = :cep WHERE id = :id");
+        $sql_user = $this->pdo->prepare("UPDATE usuarios SET nome = :nome, email = :email, senha = :senha, cidade = :cidade, estado = :estado, numero = :numero, bairro = :bairro, rua = :rua, cep = :cep WHERE id = :id");
 
         $sql_user->bindValue(':nome', $up->getNome());
         $sql_user->bindValue(':email', $up->getEmail());
         $sql_user->bindValue(':senha', $up->getSenha());
-        $sql_user->bindValue(':rua', $up->getRua());
         $sql_user->bindValue(':cep', $up->getCep());
-        $sql_user->bindValue(':id', $up->getId());
+        $sql_user->bindValue(':rua', $up->getRua());
+        $sql_user->bindValue(':numero', $up->getNumero());
+        $sql_user->bindValue(':bairro', $up->getBairro());
         $sql_user->bindValue(':cidade', $up->getCidade());
         $sql_user->bindValue(':estado', $up->getEstado());
+        $sql_user->bindValue(':id', $up->getId());
         $sql_user->execute();
         return true;
     }

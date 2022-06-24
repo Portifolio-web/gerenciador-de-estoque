@@ -61,7 +61,7 @@ if ($infoUser === false) {
                 <div class="btn-add-endereco">
                     <button><span>+</span>Adicionar Endereço</button>
                 </div>
-
+                <!-- Cadastros de Endereços -->
                 <fieldset>
                     <legend>Endereços</legend>
                     <div class="input-form">
