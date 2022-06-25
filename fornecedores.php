@@ -48,7 +48,7 @@ require_once 'menu_lateral.php';
                     <td class="bord2_left"><?= $iten->getEmail(); ?></td>
                     <td class="bord2_left"><?= $iten->getCnpj(); ?></td>
                     <td class="bord2_left" class="btn-action"><a href="up_fornecedor.php?id=<?= $iten->getId(); ?>">Editar</a></td>
-                    <td class="bord2_left" id="btn-action"><a href="delete.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
+                    <td class="bord2_left" id="btn-action"><a href="delete_fornecedor.php?id=<?= $iten->getId(); ?>">Deletar</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
