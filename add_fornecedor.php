@@ -1,8 +1,8 @@
 <?php
 session_start();
-// require_once 'config.php';
-// require_once 'models/Usuarios.php';
-// require_once 'dataAcessObject/dbUsario.php';
+require_once 'config.php';
+require_once 'models/Fornecedor.php';
+require_once 'dataAcessObject/dbFornecedor.php';
 require_once 'header.php';
 require_once 'menu_lateral.php';
 ?>

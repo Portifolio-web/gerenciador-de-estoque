@@ -35,8 +35,8 @@ if (isset($_POST['cod_fornecedor']) && !empty($_POST['cod_fornecedor'])) {
         $newFornec->setTelefone($telefone);
         $newFornec->setCep($cep);
         $newFornec->setRua($rua);
-        $newFornec->setRua($numero);
-        $newFornec->setRua($bairro);
+        $newFornec->setNumero($numero);
+        $newFornec->setBairro($bairro);
         $newFornec->setCidade($cidade);
         $newFornec->setEstado($estado);
 
