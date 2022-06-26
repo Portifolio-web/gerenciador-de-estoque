@@ -1,7 +1,5 @@
 <?php
-if(!isset($_SESSION)) {
-    session_start();
-}
+session_start();
 
 
 require_once 'config.php';
@@ -18,15 +16,17 @@ if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) 
     $senha = filter_input(INPUT_POST, 'senha');
 
     // $u->login($email, $senha);
-    
+
     if ($u->login($email, $senha) == true) {
         // echo($email);
         if (isset($_SESSION['idUser'])) {
             header("Location: index.php");
         }
     } else {
+        $_SESSION['msg'] = "Senha/Usuário Inválido!";
         header("Location: login.php");
     }
 } else {
+    $_SESSION['msg'] = "Preencha o formulário!";
     header("Location: login.php");
 }

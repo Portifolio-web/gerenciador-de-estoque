@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -23,7 +24,12 @@
                 <input type="submit" class="botao" value="Login" />
             </form>
         </div>
-
+        <div class="alert">
+            <?php
+            echo "<p>" . $_SESSION['msg'] . "</p>";
+            $_SESSION['msg'] = '';
+            ?>
+        </div>
     </section>
 </body>
 
