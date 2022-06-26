@@ -64,12 +64,12 @@ class dbFornecedor implements InterFornecedor {
     }
 
     public function findById($id){
-        $sql_user = $this->pdo->prepare("SELECT * FROM fornecedor WHERE id = :id");
-        $sql_user->bindValue(':id', $id);
-        $sql_user->execute();
+        $sql = $this->pdo->prepare("SELECT * FROM fornecedor WHERE id = :id");
+        $sql->bindValue(':id', $id);
+        $sql->execute();
         //vericação se encontra alguma valor da query consultadoa
-        if($sql_user->rowCount() > 0){
-            $dados = $sql_user->fetch();
+        if($sql->rowCount() > 0){
+            $dados = $sql->fetch();
 
             $f = new Fornecedor();
             $f->setId($dados['id']);
@@ -155,14 +155,16 @@ class dbFornecedor implements InterFornecedor {
         $sql_f = $this->pdo->prepare("UPDATE fornecedor SET cod_fornecedor = :cod_fornecedor, razao_social = :razao_social, cnpj = :cnpj, email = :email, telefone = :telefone, cep = :cep, rua = :rua, numero = :numero, bairro = :bairro, cidade = :cidade, estado = :estado WHERE id = :id");
 
         $sql_f->bindValue(':cod_fornecedor', $f->getCod_fornecedor());
-        $sql_f->bindValue(':cnpj', $f->getCnpj());
         $sql_f->bindValue(':razao_social', $f->getRazaoSocial());
+        $sql_f->bindValue(':cnpj', $f->getCnpj());
         $sql_f->bindValue(':email', $f->getEmail());
         $sql_f->bindValue(':telefone', $f->getTelefone());
+        $sql_f->bindValue(':cep', $f->getCep());
+        $sql_f->bindValue(':rua', $f->getRua());
+        $sql_f->bindValue(':numero', $f->getNumero());
+        $sql_f->bindValue(':bairro', $f->getBairro());
         $sql_f->bindValue(':cidade', $f->getCidade());
         $sql_f->bindValue(':estado', $f->getEstado());
-        $sql_f->bindValue(':rua', $f->getRua());
-        $sql_f->bindValue(':cep', $f->getCep());
         $sql_f->bindValue(':id', $f->getId());
         $sql_f->execute();
         return true;

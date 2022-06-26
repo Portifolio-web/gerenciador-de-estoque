@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 require_once 'config.php';
 require_once 'models/Usuarios.php';
 require_once 'dataAcessObject/dbUsuario.php';

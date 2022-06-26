@@ -7,18 +7,19 @@ require_once 'header.php';
 require_once 'menu_lateral.php';
 
 // instanciando o objeto usuarioDAO
-$upFornecedor = new dbFornecedor($pdo);
+$fornecedor = new dbFornecedor($pdo);
 
 $infFornecedor = false; //variável vai ter a informação do produto
 $id = filter_input(INPUT_GET, 'id');
 
 if ($id) {
     //Aqui é instanciado um valor do id se ele achar um id ele vai criar um objeto desse id caso contrário ele vai ser uma instância false.
-    $infFornecedor = $upFornecedor->findById($id);
+    $info_user = $fornecedor->findById($id);
 }
 //Se a informação do id for falso, ele reencaminhar para o index.ph do sistema, caso ele for verdadeiro ai ele mostra os fomulários ja preenchidos.
-if ($infFornecedor === false) {
-    header("Location: index.php");
+if ($info_user === false) {
+    header('Location: fornecedores.php');
+    exit;
 }
 ?>
 
@@ -39,29 +40,29 @@ if ($infFornecedor === false) {
 
         <form class="form_user" action="update_action_fornecedor.php" method="post">
             <!-- campo oculto -->
-            <input type="hidden" name="id" value="<?= $infFornecedor->getId(); ?>">
+            <input type="hidden" name="id" value="<?= $info_user->getId(); ?>">
             <div class="form-primary">
                 <fieldset>
                     <legend>Dados</legend>
                     <div class="input-form">
                         <label>Codgo Fornecedor:</label>
-                        <input type="number" name="cod_fornecedor" value="<?= $infFornecedor->getCod_fornecedor(); ?>">
+                        <input type="number" name="cod_fornecedor" value="<?= $info_user->getCod_fornecedor(); ?>">
                     </div>
                     <div class="input-form">
                         <label>Razão Social:</label>
-                        <input type="text" name="razao_social" value="<?= $infFornecedor->getRazaoSocial(); ?>">
+                        <input type="text" name="razao_social" value="<?= $info_user->getRazaoSocial(); ?>">
                     </div>
                     <div class="input-form">
                         <label>CNPJ:</label>
-                        <input type="text" name="cnpj" value="<?= $infFornecedor->getCnpj(); ?>">
+                        <input type="text" name="cnpj" value="<?= $info_user->getCnpj(); ?>">
                     </div>
                     <div class="input-form">
                         <label>E-mail:</label>
-                        <input type="email" name="email" value="<?= $infFornecedor->getEmail(); ?>">
+                        <input type="email" name="email" value="<?= $info_user->getEmail(); ?>">
                     </div>
                     <div class="input-form">
                         <label>Telefone:</label>
-                        <input type="text" name="telefone" value="<?= $infFornecedor->getTelefone(); ?>">
+                        <input type="text" name="telefone" value="<?= $info_user->getTelefone(); ?>">
                     </div>
                 </fieldset>
                 <!-- Botao de adiconar formulários de endereço -->
@@ -73,27 +74,27 @@ if ($infFornecedor === false) {
                     <legend>Endereços</legend>
                     <div class="input-form">
                         <label>Cep:</label>
-                        <input type="text" name="cep" value="<?= $infFornecedor->getCep(); ?>">
+                        <input type="text" name="cep" value="<?=$info_user->getCep(); ?>">
                     </div>
                     <div class="input-form">
                         <label>Rua:</label>
-                        <input type="text" name="rua" value="<?= $infFornecedor->getRua(); ?>">
+                        <input type="text" name="rua" value="<?=$info_user->getRua(); ?>">
                     </div>
                     <div class="input-form">
                         <label>Número:</label>
-                        <input type="number" name="numero" value="<?= $infFornecedor->getNumero(); ?>">
+                        <input type="number" name="numero" value="<?=$info_user->getNumero(); ?>">
                     </div>
                     <div class="input-form">
                         <label>Bairro:</label>
-                        <input type="text" name="bairro" value="<?= $infFornecedor->getBairro(); ?>">
+                        <input type="text" name="bairro" value="<?=$info_user->getBairro(); ?>">
                     </div>
                     <div class="input-form">
                         <label>Cidade:</label>
-                        <input type="text" name="cidade" value="<?= $infFornecedor->getCidade(); ?>">
+                        <input type="text" name="cidade" value="<?=$info_user->getCidade(); ?>">
                     </div>
                     <div class="input-form">
                         <label>Estado:</label>
-                        <input type="text" name="estado" value="<?= $infFornecedor->getEstado(); ?>">
+                        <input type="text" name="estado" value="<?=$info_user->getEstado(); ?>">
                     </div>
                 </fieldset>
                 <!-- Botão de enviar os dados dos formulários -->

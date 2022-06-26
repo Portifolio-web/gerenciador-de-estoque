@@ -22,30 +22,31 @@ $estado = filter_input(INPUT_POST, 'estado');
 
 
 //se for setado alguma valor vindo do formulário, ele entra dentro do if, caso contrário ele manda preenchar os formulários.
-if (isset($_POST['id']) && !empty($_POST['id'])) {
+if (isset($_POST['id']) && !empty($_POST['id']) && isset($_POST['cod_fornecedor']) && !empty($_POST['cod_fornecedor'])) {
     //Usando a instância findById, que faz uma consulta no banco se existe um produto com o mesmo código, caso retorne um produto com o códgo informado ele, retorna uma msg, produto cdastrado no sistema. se não retornar nenhum produto, ele entra dentro do if com o processo de cadastro usando o método CREATE do DAO da interface.
     //Aqui é feita a adição dos itens em cada método modificadores de um objeto criado da classe Produto.
-    $newFornec = new Fornecedor();
-    
-    $newFornec->setId($id);
-    $newFornec->setCod_fornecedor($cod_fornecedor);
-    $newFornec->setRazaoSocial($razao_social);
-    $newFornec->SetCnpj($cnpj);
-    $newFornec->setEmail($email);
-    $newFornec->setTelefone($telefone);
-    $newFornec->setCep($cep);
-    $newFornec->setRua($rua);
-    $newFornec->setRua($numero);
-    $newFornec->setRua($bairro);
-    $newFornec->setCidade($cidade);
-    $newFornec->setEstado($estado);
+    // $Fornecedor = $fornecedor->findById($id);
+    $Fornecedor = new Fornecedor();
+    $Fornecedor->setId($id);
+    $Fornecedor->setCod_fornecedor($cod_fornecedor);
+    $Fornecedor->setRazaoSocial($razao_social);
+    $Fornecedor->SetCnpj($cnpj);
+    $Fornecedor->setEmail($email);
+    $Fornecedor->setTelefone($telefone);
+    $Fornecedor->setCep($cep);
+    $Fornecedor->setRua($rua);
+    $Fornecedor->setNumero($numero);
+    $Fornecedor->setBairro($bairro);
+    $Fornecedor->setCidade($cidade);
+    $Fornecedor->setEstado($estado);
                  
-    $fornecedor->updateFornecedor($newFornec);
+    $fornecedor->updateFornecedor($Fornecedor);
 
-    $_SESSION['msg'] = "Usuários Atualizado com sucesso";
+    $_SESSION['msg'] = "Fornecedor Atualizado com sucesso";
 
     //quano a query anterio e executado corretamente, ele volta para a mesma página, com a mensagem Prodt. cadastrado com sucesso.
     header("Location: fornecedores.php");
+    exit;
 } else {
     $_SESSION['msg'] = "Preenchar todos os Campos!";
     header("Location: up_fornecedor.php?id=" . "$id");
