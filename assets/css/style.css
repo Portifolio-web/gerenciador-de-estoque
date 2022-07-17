@@ -1100,6 +1100,13 @@ body.dark .switch::before {
     /* width: 1130px; */
     max-width: 93%;
     border: 1px solid #ccc;
+    
+}
+.section_form .main-add-user .form-primary fieldset.addClose {
+    display: none;
+}
+.section_form .main-add-user .form-primary fieldset.openAdd {
+    display: flex;
 }
 .section_form .main-add-user .form-primary fieldset .input-form {
     display: flex;
@@ -1132,7 +1139,16 @@ body.dark .switch::before {
     height: 20px;
     
 }
-.section_form .main-add-user .form-primary .btn-add-endereco button {
+
+.section_form .main-add-user .form-primary .openBtn {
+    opacity: 1;
+    transition: var(--tran-06);
+}
+/* .section_form .main-add-user .form-primary .addBtn {
+    display: none;
+} */
+
+.section_form .main-add-user .form-primary .btn-add-endereco div {
     background-color: #5CB65E;
     border: 1px solid #ccc;
     padding: 0px 10px 5px 5px;
@@ -1140,7 +1156,7 @@ body.dark .switch::before {
     font-size: 1rem;
     color: #FFF;
 }
-.section_form .main-add-user .form-primary .btn-add-endereco button > span {
+.section_form .main-add-user .form-primary .btn-add-endereco div > span {
     font-size: 1.5rem;
     padding: 0px 5px 3px 5px;
 }

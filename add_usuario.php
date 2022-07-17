@@ -37,12 +37,13 @@ require_once 'menu_lateral.php';
                         <input type="password" name="senha" id="senha" placeholder="Senha..">
                     </div>
                 </fieldset>
+                
                 <!-- Botao de adiconar formulários de endereço -->
-                <div class="btn-add-endereco">
-                    <button><span>+</span>Adicionar Endereço</button>
+                <div class="btn-add-endereco btnPlus">
+                    <div><span>+</span>Adicionar Endereço</div>
                 </div>
 
-                <fieldset>
+                <fieldset class="addClose ">
                     <legend>Endereços</legend>
                     <div class="input-form">
                         <label>Cep:</label>
@@ -69,6 +70,7 @@ require_once 'menu_lateral.php';
                         <input type="text" name="estado" id="estado" placeholder="Estado..">
                     </div>
                 </fieldset>
+
                 <!-- Botão de enviar os dados dos formulários -->
                 <div class="btn-send">
                     <input type="submit" value="Cadastar">

@@ -48,11 +48,11 @@ require_once 'menu_lateral.php';
                     </div>
                 </fieldset>
                 <!-- Botao de adiconar formulários de endereço -->
-                <div class="btn-add-endereco">
-                    <button><span>+</span>Adicionar Endereço</button>
+                <div class="btn-add-endereco btnPlus">
+                    <div><span>+</span>Adicionar Endereço</div>
                 </div>
 
-                <fieldset>
+                <fieldset class="addClose ">
                     <legend>Endereços</legend>
                     <div class="input-form">
                         <label>Cep:</label>

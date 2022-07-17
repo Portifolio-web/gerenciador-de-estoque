@@ -8,7 +8,10 @@ const body = document.querySelector("body"),
 	//selelcionando a classe .sbmenu para aplicar um envento click
 	sbmenu = body.querySelector(".sbmenu"),
 	//selecionando a class .smenu para aplicar efeito de opem
-	smenuOpen = body.querySelector(".smenu")
+	smenuOpen = body.querySelector(".smenu"),
+
+	btnPlus = body.querySelector(".btnPlus"),
+	formAdd = body.querySelector(".addClose")
 
 toggle.addEventListener("click", () => {
 	sidebar.classList.toggle("close");
@@ -22,6 +25,10 @@ sbmenu.addEventListener("click", () => {
 
 	//aplicando o efeito dentro da tag smenu
 	smenuOpen.classList.toggle("open");
+});
+
+btnPlus.addEventListener("click", () => {
+	formAdd.classList.toggle("openAdd");
 });
 
 modeSwtich.addEventListener("click", () => {
