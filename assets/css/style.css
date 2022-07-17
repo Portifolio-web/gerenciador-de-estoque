@@ -890,7 +890,7 @@ body.dark .switch::before {
     width: calc(100% - 100px);
 }
 
-.footer {
+/* .footer {
     position: relative;
     background-color: #003F63;
     margin-top: 100px;
@@ -910,7 +910,7 @@ body.dark .switch::before {
 .sidebar.close~.footer {
     left: 100px;
     width: calc(100% - 100px);
-}
+} */
 
 .btn:target .smenu {
     max-height: 100%;
