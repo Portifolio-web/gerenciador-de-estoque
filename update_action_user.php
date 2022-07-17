@@ -7,9 +7,9 @@ require_once 'dataAcessObject/dbUsuario.php';
 // instanciando o objeto usuarioDAO
 $user = new DbUsuario($pdo);
 
-$id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_SPECIAL_CHARS);
-$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_EMAIL);
-$email = filter_input(INPUT_POST, 'email');
+$id = filter_input(INPUT_POST, 'id');
+$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+$email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $senha = filter_input(INPUT_POST, 'senha');
 $cep = filter_input(INPUT_POST, 'cep');
 $rua = filter_input(INPUT_POST, 'rua');
@@ -36,12 +36,11 @@ if (isset($_POST['id']) && !empty($_POST['id'])) {
 
     $user->updateUser($NewUser);
 
-    //$_SESSION['alert'] = "Usuários Atualizado com sucesso";
-
     //quano a query anterio e executado corretamente, ele volta para a mesma página, com a mensagem Prodt. cadastrado com sucesso.
+    $_SESSION['msg'] = "Usuário atualizado com Sucesso!";
     header("Location: usuarios.php");
 } else {
-    //$_SESSION['alert'] = "Preenchar todos os Campos!";
+    $_SESSION['msg'] = "Preenchar todos os Campos!";
     header("Location: update_user.php?id=" . "$id");
     exit;
 }
