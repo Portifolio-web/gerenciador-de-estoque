@@ -4,10 +4,10 @@ if (!isset($_SESSION['msg'])) session_start();
 <h1>Página de Cadastro</h1>
 <div class="alert">
     <?php
-
-    echo "<p>" . $_SESSION['msg'] . "</p>";
-    $_SESSION['msg'] = '';
-
+        if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
+            echo "<p>" . $_SESSION['msg'] . "</p>";
+            $_SESSION['msg'] = '';
+        }
     ?>
 </div>
 <section class="section_main">

@@ -1,5 +1,5 @@
 <?php
-session_start();
+if(!isset($_SESSION['msg'])) session_start();
 
 require_once 'config.php';
 require_once 'dataAcessObject/dbFornecedor.php';

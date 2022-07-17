@@ -26,8 +26,10 @@ if ($info_user === false) {
 <section class="section_form">
     <div class="alert">
         <?php
-        echo "<p>" . $_SESSION['msg'] . "</p>";
-        $_SESSION['alert'] = '';
+            if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
+                echo "<p>" . $_SESSION['msg'] . "</p>";
+                $_SESSION['msg'] = '';
+            }
         ?>
     </div>
     <div class="main-add-user">

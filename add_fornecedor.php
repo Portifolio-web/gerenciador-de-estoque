@@ -1,5 +1,5 @@
 <?php
-session_start();
+if(!isset($_SESSION['msg'])) session_start();
 require_once 'config.php';
 require_once 'models/Fornecedor.php';
 require_once 'dataAcessObject/dbFornecedor.php';
@@ -10,8 +10,10 @@ require_once 'menu_lateral.php';
 <section class="section_form">
     <div class="alert">
         <?php
-        echo "<p>" . $_SESSION['msg'] . "</p>";
-        $_SESSION['alert'] = '';
+            if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
+                echo "<p>" . $_SESSION['msg'] . "</p>";
+                $_SESSION['msg'] = '';
+            }
         ?>
     </div>
     <div class="main-add-user">

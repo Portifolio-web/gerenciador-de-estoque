@@ -1,4 +1,4 @@
-<?php session_start() ?>
+<?php if (!isset($_SESSION['msg'])) session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -26,8 +26,10 @@
         </div>
         <div class="alert">
             <?php
-            echo "<p>" . $_SESSION['msg'] . "</p>";
-            $_SESSION['msg'] = '';
+                if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
+                    echo "<p>" . $_SESSION['msg'] . "</p>";
+                    $_SESSION['msg'] = '';
+                }
             ?>
         </div>
     </section>
