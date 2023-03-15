@@ -9,7 +9,7 @@ require_once 'dataAcessObject/dbUsuario.php';
 //instanciado o objeto usuario
 $u = new DbUsuario($pdo);
 
-//verificar se o nome foi setado
+//verificar se o email e senha foi setado
 if (isset($_POST['email']) && !empty($_POST['email']) && isset($_POST['senha']) && !empty($_POST['senha'])) {
 
     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);

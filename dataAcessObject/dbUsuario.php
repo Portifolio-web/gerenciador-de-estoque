@@ -159,7 +159,7 @@ class DbUsuario implements interUsuarios
             // $u->setEmail($user['email']);
 
             $_SESSION['idUser'] = $user['nome'];
-            // echo $user['id']; 
+            echo $user['id']; 
 
             return true;
         } else {

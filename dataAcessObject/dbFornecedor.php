@@ -11,11 +11,11 @@ class dbFornecedor implements InterFornecedor {
 
     public function createFornecedor(Fornecedor $f) {
         
-        $sql = $this->pdo->prepare("INSERT INTO fornecedor (cod_fornecedor, razao_social, cnpj, email, telefone, cep, rua, numero, bairro, cidade, estado) 
-    VALUES (:cod_fornecedor, :razao_social, :cnpj,  :email, :telefone, :cep, :rua, :numero, :bairro, :cidade, :estado)");
+        $sql = $this->pdo->prepare("INSERT INTO fornecedor (cod_fornecedor, razaoSocial, cnpj, email, telefone, cep, rua, numero, bairro, cidade, estado) 
+    VALUES (:cod_fornecedor, :razaoSocial, :cnpj,  :email, :telefone, :cep, :rua, :numero, :bairro, :cidade, :estado)");
         
         $sql->bindValue(':cod_fornecedor', $f->getCod_fornecedor());
-        $sql->bindValue(':razao_social', $f->getRazaoSocial());
+        $sql->bindValue(':razaoSocial', $f->getRazaoSocial());
         $sql->bindValue(':cnpj', $f->getCnpj());
         $sql->bindValue(':email', $f->getEmail());
         $sql->bindValue(':telefone', $f->getTelefone());
@@ -45,7 +45,7 @@ class dbFornecedor implements InterFornecedor {
                 $f = new Fornecedor();
                 $f->setId($itens['id']);
                 $f->setCod_fornecedor($itens['cod_fornecedor']);
-                $f->setRazaoSocial($itens['razao_social']);
+                $f->setRazaoSocial($itens['razaoSocial']);
                 $f->SetCnpj($itens['cnpj']);
                 $f->setEmail($itens['email']);
                 $f->setTelefone($itens['telefone']);
