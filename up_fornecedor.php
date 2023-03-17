@@ -76,27 +76,27 @@ if ($infoFornecedor === false) {
                     <legend>Endereços</legend>
                     <div class="input-form">
                         <label>Cep:</label>
-                        <input type="text" name="cep" placeholder="<?= $infoFornecedor->getCep()?>">
+                        <input type="text" name="cep" value="<?= $infoFornecedor->getCep()?>">
                     </div>
                     <div class="input-form">
                         <label>Rua:</label>
-                        <input type="text" name="rua" placeholder="<?= $infoFornecedor->getRua()?>">
+                        <input type="text" name="rua" value="<?= $infoFornecedor->getRua()?>">
                     </div>
                     <div class="input-form">
                         <label>Número:</label>
-                        <input type="number" name="numero" placeholder="<?= $infoFornecedor->getNumero()?>">
+                        <input type="number" name="numero" value="<?= $infoFornecedor->getNumero()?>">
                     </div>
                     <div class="input-form">
                         <label>Bairro:</label>
-                        <input type="text" name="bairro" placeholder="<?= $infoFornecedor->getBairro()?>">
+                        <input type="text" name="bairro" value="<?= $infoFornecedor->getBairro()?>">
                     </div>
                     <div class="input-form">
                         <label>Cidade:</label>
-                        <input type="text" name="cidade" placeholder="<?= $infoFornecedor->getCidade()?>">
+                        <input type="text" name="cidade" value="<?= $infoFornecedor->getCidade()?>">
                     </div>
                     <div class="input-form">
                         <label>Estado:</label>
-                        <input type="text" name="estado" placeholder="<?= $infoFornecedor->getEstado()?>">
+                        <input type="text" name="estado" value="<?= $infoFornecedor->getEstado()?>">
                     </div>
                 </fieldset>
                 <!-- Botão de enviar os dados dos formulários -->
