@@ -18,7 +18,7 @@
             <ul>
                 <li class="title">Área do Cliente</li>
                 <li class="icons-usertitle">Bem Vindo(a) </li>
-                <li class="avatar"><img src="./assets/image/avatar.png" alt=""></li>
+                <li class="avatar"><img src="./assets/image/<?php echo $_SESSION['avatar']; ?>" alt=""></li> 
                 <li class="icons-user"> <?php echo $_SESSION['idUser'];  ?></li>
             </ul>
         </nav>

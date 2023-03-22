@@ -9,13 +9,7 @@ require_once 'models/produtos.php';
 require_once 'dataAcessObject/ProdutosMysql.php';
 require_once 'models/Usuarios.php';
 
-// $user = new dbUsuario($pdo);
 
-// // $user->login($email, $senha);
-
-// instanciando o objeto usuarioDAO
-// $produtos = new ProdutosMysql($pdo);
-// $lista = $produtos->findAll();
 ?>
 
 <?php

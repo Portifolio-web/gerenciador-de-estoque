@@ -11,6 +11,8 @@ class Usuarios {
     private $bairro;
     private $cidade;
     private $estado;
+    private $urls;
+    private $nameImages;
 
     public function getId() {
         return $this->id;
@@ -90,7 +92,23 @@ class Usuarios {
 
     public function setEstado($est) {
         $this->estado = $est;
-    } 
+    }
+
+    public function getUrls() {
+        return $this->urls;
+    }
+
+    public function setUrls($ur) {
+        $this->urls = $ur;
+    }
+
+    public function getNameImages() {
+        return $this->nameImages;
+    }
+
+    public function setNameImages($Ni) {
+        $this->nameImages = $Ni;
+    }
 
 
 }

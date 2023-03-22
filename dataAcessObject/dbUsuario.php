@@ -15,7 +15,7 @@ class DbUsuario implements interUsuarios
     public function createUser(Usuarios $u)
     {
 
-        $sql = $this->pdo->prepare("INSERT INTO usuarios (nome, email, senha, cidade, estado, rua, cep, numero, bairro) VALUES (:nome, :email, :senha, :cidade, :estado, :rua, :cep, :numero, :bairro)");
+        $sql = $this->pdo->prepare("INSERT INTO usuarios (nome, email, senha, cidade, estado, rua, cep, numero, bairro, urls, nameImages) VALUES (:nome, :email, :senha, :cidade, :estado, :rua, :cep, :numero, :bairro, urls, :urls, nameImages, :nameImagens)");
 
         $sql->bindValue(':nome', $u->getNome());
         $sql->bindValue(':email', $u->getEmail());
@@ -26,6 +26,8 @@ class DbUsuario implements interUsuarios
         $sql->bindValue(':cep', $u->getCep());
         $sql->bindValue(':numero', $u->getNumero());
         $sql->bindValue(':bairro', $u->getBairro());
+        $sql->bindVAlue(':urls', $u->getUrls());
+        $sql->bindVAlue(':nameImages', $u->getNameImages());
         $sql->execute();
 
         $u->setId($this->pdo->lastInsertId());
@@ -158,8 +160,9 @@ class DbUsuario implements interUsuarios
             // $u->setNome($user['nome']);
             // $u->setEmail($user['email']);
 
-            $_SESSION['idUser'] = $user['nome'];
-            echo $user['id']; 
+            $_SESSION['idUser'] = $user['nome'];//retorna o nome do autor que esta logado na sessão
+            $_SESSION['avatar'] = $user['nameImages'];//retorno a imagem do usuarios logado no sistema
+            //echo $user['nameImages'];
 
             return true;
         } else {
